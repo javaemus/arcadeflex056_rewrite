@@ -11,7 +11,7 @@
  * using automatic conversion tool v0.01
  */ 
 package WIP.mame056.vidhrdw;
-
+import static mame056.palette.*;
 import static WIP2.arcadeflex056.fucPtr.*;
 import static WIP2.common.libc.cstring.memset;
 

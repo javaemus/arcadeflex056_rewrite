@@ -18,7 +18,7 @@ import static WIP2.common.ptr.*;
 import static WIP2.common.libc.cstring.*;
 import static WIP2.common.libc.cstdio.sprintf;
 import static WIP2.mame056.usrintrf.usrintf_showmessage;
-
+import static mame056.palette.*;
 import static WIP2.mame056.common.*;
 import static WIP2.mame056.palette.*;
 import static WIP2.mame056.drawgfx.*;

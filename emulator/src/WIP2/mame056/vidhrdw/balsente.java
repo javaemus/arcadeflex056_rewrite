@@ -24,7 +24,7 @@ import static WIP2.mame056.mame.*;
 import static WIP2.mame056.cpuexec.*;
 
 import static WIP2.mame056.drivers.balsente.*;
-
+import static mame056.palette.*;
 import static WIP2.mame056.vidhrdw.generic.*;
 
 public class balsente {

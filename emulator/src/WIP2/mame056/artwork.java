@@ -30,7 +30,7 @@ import static WIP2.mame056.drawgfxH.*;
 import static WIP2.mame056.drawgfx.*;
 import static WIP2.mame056.driverH.*;
 import static WIP2.mame056.mame.*;
-import static WIP2.mame056.palette.*;
+import static mame056.palette.*;
 // refactor
 import static WIP2.arcadeflex036.osdepend.logerror;
 import static WIP2.common.subArrays.*;

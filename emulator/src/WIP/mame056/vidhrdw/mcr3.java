@@ -28,7 +28,7 @@ import static WIP2.mame056.tilemapC.priority_bitmap;
 import static WIP2.mame056.vidhrdw.generic.*;
 import static WIP2.common.libc.cstring.*;
 import static WIP2.common.libc.cstdio.*;
-
+import static mame056.palette.*;
 public class mcr3 {
 	
 	

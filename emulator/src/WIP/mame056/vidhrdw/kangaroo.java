@@ -16,7 +16,7 @@ import static WIP2.arcadeflex056.fucPtr.*;
 
 import static WIP2.common.ptr.*;
 import static WIP2.common.libc.cstring.*;
-
+import static mame056.palette.*;
 import static WIP2.mame056.common.*;
 import static WIP2.mame056.palette.*;
 import static WIP2.mame056.drawgfx.*;

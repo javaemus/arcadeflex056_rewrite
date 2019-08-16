@@ -18,7 +18,7 @@ package WIP2.mame056.drivers;
 
 import static WIP2.arcadeflex056.fucPtr.*;
 import WIP2.common.ptr.UBytePtr;
-
+import static mame056.palette.*;
 import static WIP2.mame056.common.*;
 import static WIP2.mame056.commonH.*;
 import static WIP2.mame056.cpuexec.*;

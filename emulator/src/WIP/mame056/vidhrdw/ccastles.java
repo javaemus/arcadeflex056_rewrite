@@ -27,7 +27,8 @@ import static WIP2.mame056.vidhrdw.generic.*;
 import static WIP2.mame056.palette.*;
 // refactor
 import static WIP2.arcadeflex036.osdepend.logerror;
-
+import static mame056.palette.*;
+import static mame056.palette.*;
 public class ccastles
 {
 	

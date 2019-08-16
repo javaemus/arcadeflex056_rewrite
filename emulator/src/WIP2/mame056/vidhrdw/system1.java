@@ -15,7 +15,7 @@ package WIP2.mame056.vidhrdw;
 
 import static WIP2.arcadeflex056.fucPtr.*;
 import static WIP2.common.libc.cstring.memset;
-
+import static mame056.palette.*;
 import static WIP2.common.ptr.*;
 import WIP2.common.subArrays.IntArray;
 import static WIP2.mame056.common.*;

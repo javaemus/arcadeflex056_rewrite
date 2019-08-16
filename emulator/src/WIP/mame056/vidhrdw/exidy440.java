@@ -15,7 +15,7 @@ import static WIP.mame056.drivers.exidy440.exidy440_topsecret;
 import static WIP2.arcadeflex056.fucPtr.*;
 import static WIP2.common.libc.cstring.memset;
 import static WIP2.common.libc.cstring.memcpy;
-
+import static mame056.palette.*;
 import static WIP2.common.ptr.*;
 import static WIP2.common.subArrays.*;
 import static WIP2.mame056.common.*;

@@ -18,6 +18,7 @@ import static WIP2.mame056.inptport.*;
 import static WIP2.mame056.palette.*;
 import static WIP2.mame056.sound.dac.*;
 import static WIP2.mame056.sound.dacH.*;
+import static mame056.palette.*;
 
 public class avalnche
 {

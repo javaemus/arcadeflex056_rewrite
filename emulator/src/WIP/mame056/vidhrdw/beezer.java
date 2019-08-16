@@ -22,7 +22,7 @@ import static WIP2.mame056.drawgfxH.*;
 import static WIP2.mame056.inptport.*;
 import static WIP2.mame056.sound.mixer.*;
 import static WIP2.mame056.vidhrdw.generic.*;
-
+import static mame056.palette.*;
 // refactor
 import static WIP2.arcadeflex036.osdepend.logerror;
 import static WIP2.mame056.cpu.m6809.m6809H.M6809_FIRQ_LINE;

@@ -20,7 +20,7 @@ import static WIP2.mame056.mame.*;
 import static WIP2.mame056.memoryH.*;
 import static WIP2.mame056.commonH.*;
 import static WIP2.mame056.drawgfxH.*;
-
+import static mame056.palette.*;
 import static WIP2.mame056.vidhrdw.generic.*;
 
 public class _1943 {

@@ -16,6 +16,7 @@ import static WIP2.mame056.drawgfxH.*;
 import static WIP2.mame056.mame.*;
 import static WIP2.mame056.palette.*;
 import static WIP2.mame056.vidhrdw.generic.*;
+import static mame056.palette.*;
 
 public class munchmo {
 

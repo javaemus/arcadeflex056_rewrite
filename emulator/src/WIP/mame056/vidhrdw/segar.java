@@ -13,7 +13,7 @@
 package WIP.mame056.vidhrdw;
 
 import static WIP2.arcadeflex056.fucPtr.*;
-
+import static mame056.palette.*;
 import static WIP2.common.ptr.*;
 import static WIP2.common.libc.expressions.*;
 

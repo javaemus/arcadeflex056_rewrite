@@ -18,7 +18,7 @@ import static WIP2.mame056.usrintrf.*;
 import static WIP2.mame056.osdependH.*;
 import static WIP2.mame056.sndintrf.*;
 import static WIP2.mame056.palette.*;
-
+import static mame056.palette.*;
 import static WIP2.common.ptr.*;
 import static WIP2.arcadeflex056.video.osd_close_display;
 import static WIP2.arcadeflex056.video.osd_create_display;

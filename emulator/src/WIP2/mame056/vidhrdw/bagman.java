@@ -22,7 +22,7 @@ import static WIP2.mame056.drawgfxH.*;
 import static WIP2.mame056.mame.*;
 import static WIP2.mame056.commonH.*;
 import static WIP2.mame056.palette.*;
-
+import static mame056.palette.*;
 import static WIP2.mame056.vidhrdw.generic.*;
 
 public class bagman {

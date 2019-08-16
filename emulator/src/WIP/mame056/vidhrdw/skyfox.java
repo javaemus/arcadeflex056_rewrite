@@ -57,6 +57,7 @@ import static WIP2.mame056.palette.*;
 // refactor
 import static WIP2.arcadeflex036.osdepend.logerror;
 import static WIP2.mame056.sndintrf.*;
+import static mame056.palette.*;
 
 public class skyfox
 {

@@ -14,7 +14,7 @@ package WIP.mame056.vidhrdw;
 
 import static WIP.mame056.machine.nb1413m3.*;
 import static WIP.mame056.machine.nb1413m3H.*;
-
+import static mame056.palette.*;
 import static WIP2.arcadeflex056.fucPtr.*;
 import static WIP2.common.ptr.*;
 import static WIP2.common.libc.cstring.*;

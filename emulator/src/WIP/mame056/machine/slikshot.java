@@ -87,6 +87,7 @@ import static WIP2.mame056.cpuintrfH.*;
 import static WIP2.mame056.inptport.*;
 import static WIP2.mame056.mame.*;
 import static WIP2.mame056.palette.*;
+import static mame056.palette.*;
 // refactor
 import static WIP2.arcadeflex036.osdepend.logerror;
 
