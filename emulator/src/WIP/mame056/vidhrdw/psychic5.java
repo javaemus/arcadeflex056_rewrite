@@ -674,7 +674,7 @@ public class psychic5
 						clip.max_x = 0;
 						clip.max_y = 0;
 					}
-					fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+					fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 					copyscrollbitmap(bitmap,bitmap_bg,1,new int[]{bg_scrollx},1,new int[]{bg_scrolly},clip,TRANSPARENCY_NONE,0);
 				} else
 					copyscrollbitmap(bitmap,bitmap_bg,1,new int[]{bg_scrollx},1,new int[]{bg_scrolly},Machine.visible_area,TRANSPARENCY_NONE,0);
@@ -683,7 +683,7 @@ public class psychic5
 				copyscrollbitmap(bitmap,bitmap_bg,1,new int[]{bg_scrollx},1,new int[]{bg_scrolly},Machine.visible_area,TRANSPARENCY_NONE,0);
 		} else
 		{
-			fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+			fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 			memset(bg_dirtybuffer,1,64*32);
 		}
 	

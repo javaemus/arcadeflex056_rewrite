@@ -147,7 +147,7 @@ public class liberatr
 	
 		liberatr_videoram.write((y<<8) | x, data & 0xe0);
 	
-		pen = Machine.pens[(data >> 5) + 0x10];
+		pen = Machine.pens.read((data >> 5) + 0x10);
 		plot_pixel.handler(Machine.scrbitmap, x, y, pen);
 	}
 	
@@ -474,7 +474,7 @@ public class liberatr
 				if ((color & 0x0c) == 0x0c)
 					color = base_color;
 	
-				pen = Machine.pens[color];
+				pen = Machine.pens.read(color);
 	
 				segment_length = buffer.readinc();
 	

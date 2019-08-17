@@ -323,7 +323,7 @@ public class twincobr {
 	
 		if (twincobr_display_on == 0)
 		{
-			fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+			fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 			return;
 		}
 	

@@ -118,7 +118,7 @@ public class exzisus
 		int gfx_num, gfx_attr, gfx_offs;
 	
 		/* Is this correct ? */
-		fillbitmap(bitmap, Machine.pens[1023], Machine.visible_area);
+		fillbitmap(bitmap, Machine.pens.read(1023), Machine.visible_area);
 	
 		/* ---------- 1st TC0010VCU ---------- */
 		sx = 0;

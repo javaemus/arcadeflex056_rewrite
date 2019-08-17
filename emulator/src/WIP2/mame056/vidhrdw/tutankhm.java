@@ -68,8 +68,8 @@ public class tutankhm
 			y2 = 255 - y2;
 		}
 	
-		plot_pixel.handler(tmpbitmap,x1,y1,Machine.pens[data & 0x0f]);
-		plot_pixel.handler(tmpbitmap,x2,y2,Machine.pens[data >> 4]);
+		plot_pixel.handler(tmpbitmap,x1,y1,Machine.pens.read(data & 0x0f));
+		plot_pixel.handler(tmpbitmap,x2,y2,Machine.pens.read(data >> 4));
 	}
 	
 	

@@ -395,7 +395,7 @@ public class ppu2c03b {
         }
 	
 		/* cache the background pen */
-        back_pen = Machine.pens[(chips[num].back_color & color_mask) + intf.color_base[num]];
+        back_pen = Machine.pens.read((chips[num].back_color & color_mask) + intf.color_base[num]);
 	
 		/* determine where in the nametable to start drawing from */
 		/* based on the current scanline and scroll regs */
@@ -852,10 +852,10 @@ public class ppu2c03b {
             for (i = 0; i < default_colortable_mono.length; i++)//for( i = 0; i < ( sizeof( default_colortable_mono ) / sizeof( default_colortable_mono[0] ) ); i++ )
             {
 				/* monochromatic table */
-                chips[num].colortable_mono[i] = Machine.pens[default_colortable_mono[i] + color_base];
+                chips[num].colortable_mono[i] = Machine.pens.read(default_colortable_mono[i] + color_base);
 	
 				/* color table */
-                Machine.gfx[intf.gfx_layout_number[num]].colortable.write(i, Machine.pens[default_colortable_mono[i] + color_base]);
+                Machine.gfx[intf.gfx_layout_number[num]].colortable.write(i, Machine.pens.read(default_colortable_mono[i] + color_base));
             }
         }
 	
@@ -1065,8 +1065,8 @@ public class ppu2c03b {
                     data &= 0x3f;
 
                     if ((tempAddr & 0x03) != 0) {
-                        Machine.gfx[intf.gfx_layout_number[num]].colortable.write(tempAddr & 0x1f, Machine.pens[color_base + data]);
-                        chips[num].colortable_mono[tempAddr & 0x1f] = Machine.pens[color_base + (data & 0xf0)];
+                        Machine.gfx[intf.gfx_layout_number[num]].colortable.write(tempAddr & 0x1f, Machine.pens.read(color_base + data));
+                        chips[num].colortable_mono[tempAddr & 0x1f] = Machine.pens.read(color_base + (data & 0xf0));
                     }
 
                     if ((tempAddr & 0x0f) == 0) {
@@ -1074,8 +1074,8 @@ public class ppu2c03b {
 
                         chips[num].back_color = data;
                         for (i = 0; i < 32; i += 4) {
-                            Machine.gfx[intf.gfx_layout_number[num]].colortable.write(i, Machine.pens[color_base + data]);
-                            chips[num].colortable_mono[i] = Machine.pens[color_base + (data & 0xf0)];
+                            Machine.gfx[intf.gfx_layout_number[num]].colortable.write(i, Machine.pens.read(color_base + data));
+                            chips[num].colortable_mono[i] = Machine.pens.read(color_base + (data & 0xf0));
                         }
                     }
 	

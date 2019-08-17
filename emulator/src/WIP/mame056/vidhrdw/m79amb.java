@@ -61,7 +61,7 @@ public class m79amb
 	
 			for (i = 0; i < 8; i++)
 			{
-				plot_pixel2(Machine.scrbitmap, tmpbitmap, x, y, Machine.pens[(data & 0x80)!=0 ? WHITE : BLACK]);
+				plot_pixel2(Machine.scrbitmap, tmpbitmap, x, y, Machine.pens.read((data & 0x80)!=0 ? WHITE : BLACK));
 	
 				x++;
 				data <<= 1;

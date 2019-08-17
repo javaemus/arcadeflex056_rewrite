@@ -288,17 +288,17 @@ public class route16
 	
 		if (video_flip != 0)
 		{
-			plot_pixel.handler(bitmap, x  , y, Machine.pens[color1 | coloroffset]);
-			plot_pixel.handler(bitmap, x-1, y, Machine.pens[color2 | coloroffset]);
-			plot_pixel.handler(bitmap, x-2, y, Machine.pens[color3 | coloroffset]);
-			plot_pixel.handler(bitmap, x-3, y, Machine.pens[color4 | coloroffset]);
+			plot_pixel.handler(bitmap, x  , y, Machine.pens.read(color1 | coloroffset));
+			plot_pixel.handler(bitmap, x-1, y, Machine.pens.read(color2 | coloroffset));
+			plot_pixel.handler(bitmap, x-2, y, Machine.pens.read(color3 | coloroffset));
+			plot_pixel.handler(bitmap, x-3, y, Machine.pens.read(color4 | coloroffset));
 		}
 		else
 		{
-			plot_pixel.handler(bitmap, x  , y, Machine.pens[color1 | coloroffset]);
-			plot_pixel.handler(bitmap, x+1, y, Machine.pens[color2 | coloroffset]);
-			plot_pixel.handler(bitmap, x+2, y, Machine.pens[color3 | coloroffset]);
-			plot_pixel.handler(bitmap, x+3, y, Machine.pens[color4 | coloroffset]);
+			plot_pixel.handler(bitmap, x  , y, Machine.pens.read(color1 | coloroffset));
+			plot_pixel.handler(bitmap, x+1, y, Machine.pens.read(color2 | coloroffset));
+			plot_pixel.handler(bitmap, x+2, y, Machine.pens.read(color3 | coloroffset));
+			plot_pixel.handler(bitmap, x+3, y, Machine.pens.read(color4 | coloroffset));
 		}
 	}
 	

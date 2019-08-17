@@ -148,7 +148,7 @@ public class retofinv
 	{
 		flipscreen = data;
 		memset(bg_dirtybuffer,1,retofinv_videoram_size[0]);
-		fillbitmap(bitmap_bg,Machine.pens[0],null);
+		fillbitmap(bitmap_bg,Machine.pens.read(0),null);
 	} };
 	
 	public static ReadHandlerPtr retofinv_bg_videoram_r  = new ReadHandlerPtr() { public int handler(int offset)

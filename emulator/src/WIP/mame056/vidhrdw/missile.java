@@ -104,7 +104,7 @@ public class missile
 	
 		if (bottom != 0) color &= 0x06;
 	
-		plot_pixel.handler(Machine.scrbitmap, x, y, Machine.pens[color]);
+		plot_pixel.handler(Machine.scrbitmap, x, y, Machine.pens.read(color));
 	}
 	
 	/********************************************************************************************/

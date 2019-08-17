@@ -265,7 +265,7 @@ public class _1943 {
                         Machine.visible_area,
                         TRANSPARENCY_NONE, 0);
             } else {
-                fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
             }
 
             if (objon != 0) {

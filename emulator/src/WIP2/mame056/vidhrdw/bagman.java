@@ -81,7 +81,7 @@ public class bagman {
             int offs;
 
             if (bagman_video_enable.read() == 0) {
-                fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
 
                 return;
             }

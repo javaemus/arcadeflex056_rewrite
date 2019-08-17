@@ -221,10 +221,10 @@ public class williams
 					blaster_back_color = 0;
 	
 				/* draw the scanline, temporarily remapping pen 0 */
-				saved_pen0 = Machine.pens[0];
-				Machine.pens[0] = Machine.pens[blaster_back_color];
+				saved_pen0 = Machine.pens.read(0);
+				Machine.pens.write(0, Machine.pens.read(blaster_back_color));
 				draw_scanline8(bitmap, xoffset, y, pairs * 2, scanline, new IntArray(Machine.pens), transparent_pen);
-				Machine.pens[0] = saved_pen0;
+				Machine.pens.write(0, saved_pen0);
 			}
 		}
 	}

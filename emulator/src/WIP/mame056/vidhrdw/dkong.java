@@ -363,10 +363,10 @@ public class dkong
 				if ((table.read(counter) & 0x80)!=0)	/* star */
 				{
 					if ((rand() & 1)!=0)	/* noise coming from sound board */
-						plot_pixel.handler(bitmap,x,y,Machine.pens[256]);
+						plot_pixel.handler(bitmap,x,y,Machine.pens.read(256));
 				}
 				else if (grid_on != 0)			/* radar */
-					plot_pixel.handler(bitmap,x,y,Machine.pens[257]);
+					plot_pixel.handler(bitmap,x,y,Machine.pens.read(257));
 			}
 	
 			counter++;

@@ -131,7 +131,7 @@ public class circus
 	static void draw_line(mame_bitmap bitmap, int x1, int y1, int x2, int y2, int dotted)
 	{
 		/* Draws horizontal and Vertical lines only! */
-	    int col = Machine.pens[1];
+	    int col = Machine.pens.read(1);
 	
 	    int count, skip;
 	

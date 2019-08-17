@@ -47,15 +47,15 @@ public class berzerk {
             return;
         }
 
-        fore = (char)Machine.pens[(col >> 4) & 0x0f];
-        back = (char)Machine.pens[0];
+        fore = (char)Machine.pens.read((col >> 4) & 0x0f);
+        back = (char)Machine.pens.read(0);
 
         plot_pixel.handler(Machine.scrbitmap, x, y, (data & 0x80) != 0 ? fore : back);
         plot_pixel.handler(Machine.scrbitmap, x + 1, y, (data & 0x40) != 0 ? fore : back);
         plot_pixel.handler(Machine.scrbitmap, x + 2, y, (data & 0x20) != 0 ? fore : back);
         plot_pixel.handler(Machine.scrbitmap, x + 3, y, (data & 0x10) != 0 ? fore : back);
 
-        fore = (char)Machine.pens[col & 0x0f];
+        fore = (char)Machine.pens.read(col & 0x0f);
 
         plot_pixel.handler(Machine.scrbitmap, x + 4, y, (data & 0x08) != 0 ? fore : back);
         plot_pixel.handler(Machine.scrbitmap, x + 5, y, (data & 0x04) != 0 ? fore : back);

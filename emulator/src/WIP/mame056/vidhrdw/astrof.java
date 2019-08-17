@@ -147,8 +147,8 @@ public class astrof
 		videoram.write(offset, data);
 		colorram.write(offset, color);
 	
-		fore = Machine.pens[color | 1];
-		back = Machine.pens[color    ];
+		fore = Machine.pens.read(color | 1);
+		back = Machine.pens.read(color    );
 	
 		x = (offset >> 8) << 3;
 		y = 255 - (offset & 0xff);

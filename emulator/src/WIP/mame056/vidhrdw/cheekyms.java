@@ -154,7 +154,7 @@ public class cheekyms
 		}
 	
 	
-		fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 	
 		/* Draw the sprites first, because they're supposed to appear below
 		   the characters */
@@ -243,6 +243,6 @@ public class cheekyms
 		redraw_man = 0;
 	
 		/* copy the temporary bitmap to the screen over the sprites */
-		copybitmap(bitmap,tmpbitmap,0,0,0,0,Machine.visible_area,TRANSPARENCY_PEN,Machine.pens[4*char_palette]);
+		copybitmap(bitmap,tmpbitmap,0,0,0,0,Machine.visible_area,TRANSPARENCY_PEN,Machine.pens.read(4*char_palette));
 	} };
 }

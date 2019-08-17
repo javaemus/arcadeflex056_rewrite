@@ -306,7 +306,7 @@ public class skyfox
 				plot_pixel.handler(bitmap,
 							( (j&1)     + x ) % 512,
 							( ((j/2)&1) + y ) % 256,
-							Machine.pens[256+(pen&0x7f)] );
+							Machine.pens.read(256+(pen&0x7f)) );
 		}
 	}
 	
@@ -322,7 +322,7 @@ public class skyfox
 	
 	public static VhUpdatePtr skyfox_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
-		fillbitmap(bitmap,Machine.pens[255],Machine.visible_area);	// the bg is black
+		fillbitmap(bitmap,Machine.pens.read(255),Machine.visible_area);	// the bg is black
 		skyfox_draw_background(bitmap);
 		skyfox_draw_sprites(bitmap);
 	} };

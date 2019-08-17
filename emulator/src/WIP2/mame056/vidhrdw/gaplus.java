@@ -135,7 +135,7 @@ public class gaplus {
                     if (color != 0 && total_stars < MAX_STARS) {
                         stars[total_stars].x = x;
                         stars[total_stars].y = y;
-                        stars[total_stars].col = Machine.pens[color];
+                        stars[total_stars].col = Machine.pens.read(color);
                         stars[total_stars].set = set++;
 
                         if (set == 3) {
@@ -372,7 +372,7 @@ public class gaplus {
         public void handler(mame_bitmap bitmap, int full_refresh) {
             int offs;
 
-            fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+            fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
 
             starfield_render(bitmap);
 

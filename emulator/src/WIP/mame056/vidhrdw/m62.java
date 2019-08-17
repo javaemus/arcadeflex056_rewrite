@@ -700,7 +700,7 @@ public class m62
 	
 			if (prioritylayer != 0)
 			{
-				copyscrollbitmap(bitmap,tmpbitmap,1,new int[]{scrollx},1,new int[]{scrolly},Machine.visible_area,TRANSPARENCY_PEN,Machine.pens[0]);
+				copyscrollbitmap(bitmap,tmpbitmap,1,new int[]{scrollx},1,new int[]{scrolly},Machine.visible_area,TRANSPARENCY_PEN,Machine.pens.read(0));
 			}
 			else
 			{
@@ -758,7 +758,7 @@ public class m62
 	
 			if (prioritylayer != 0)
 			{
-				copyscrollbitmap(bitmap,tmpbitmap,0,new int[]{0},1,new int[]{scrolly},Machine.visible_area,TRANSPARENCY_PEN,Machine.pens[0]);
+				copyscrollbitmap(bitmap,tmpbitmap,0,new int[]{0},1,new int[]{scrolly},Machine.visible_area,TRANSPARENCY_PEN,Machine.pens.read(0));
 			}
 			else
 			{

@@ -194,7 +194,7 @@ public class copsnrob
 	                {
 	                    if ((copsnrob_bulletsram.read(y) & mask2) != 0)
 	                    {
-	                        plot_pixel.handler(bitmap, 256-x, y, Machine.pens[1]);
+	                        plot_pixel.handler(bitmap, 256-x, y, Machine.pens.read(1));
 	                    }
 	                }
 	            }

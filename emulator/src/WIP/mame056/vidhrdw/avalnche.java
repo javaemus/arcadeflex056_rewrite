@@ -72,7 +72,7 @@ public class avalnche
 			y = offset / 32;
 	
 			for (i = 0;i < 8;i++)
-				plot_pixel.handler(tmpbitmap,x+7-i,y,Machine.pens[(data >> i) & 1]);
+				plot_pixel.handler(tmpbitmap,x+7-i,y,Machine.pens.read((data >> i) & 1));
 		}
 	} };
 	

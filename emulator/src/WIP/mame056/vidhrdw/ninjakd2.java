@@ -109,7 +109,7 @@ public class ninjakd2
 			if (bg_enable != 0)
 			 memset(bg_dirtybuffer, 1, ninjakd2_backgroundram_size[0] / 2);
 			else
-			 fillbitmap(bitmap_bg, Machine.pens[0],null);
+			 fillbitmap(bitmap_bg, Machine.pens.read(0),null);
 		}
 	} };
 	

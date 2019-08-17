@@ -167,7 +167,7 @@ public class geebee
 	{
 		rectangle r = Machine.visible_area;
 		if (x >= r.min_x && x <= r.max_x && y >= r.min_y && y <= r.max_y)
-			plot_pixel.handler(bitmap,x,y,Machine.pens[1]);
+			plot_pixel.handler(bitmap,x,y,Machine.pens.read(1));
 	}
 	
 	public static void geebee_mark_dirty(int x, int y)

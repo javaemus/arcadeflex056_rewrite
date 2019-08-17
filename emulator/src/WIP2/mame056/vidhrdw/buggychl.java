@@ -144,7 +144,7 @@ public class buggychl {
 
         for (y = 0; y < 256; y++) {
             for (x = 0; x < 256; x++) {
-                plot_pixel.handler(bitmap, x, y, Machine.pens[128 + x / 2]);
+                plot_pixel.handler(bitmap, x, y, Machine.pens.read(128 + x / 2));
             }
         }
     }
@@ -267,7 +267,7 @@ public class buggychl {
                             if (col != 0) {
                                 int dx = flip_screen_x[0] != 0 ? (255 - sx - px) : (sx + px);
                                 if ((dx & ~0xff) == 0) {
-                                    plot_pixel.handler(bitmap, dx, dy, Machine.pens[sprite_color_base + col]);
+                                    plot_pixel.handler(bitmap, dx, dy, Machine.pens.read(sprite_color_base + col));
                                 }
                             }
 
@@ -289,7 +289,7 @@ public class buggychl {
             if (sky_on != 0) {
                 draw_sky(bitmap);
             } else {
-                fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
             }
 
 

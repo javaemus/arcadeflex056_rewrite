@@ -302,14 +302,14 @@ public class cosmic
 		y = offset / 32;
 		x = 8 * (offset % 32);
 	
-	    col = Machine.pens[map_color.handler(x, y)];
+	    col = Machine.pens.read(map_color.handler(x, y));
 	
 	    for (i = 0; i < 8; i++)
 	    {
 			if (flip_screen() != 0)
-				plot_pixel.handler(tmpbitmap, 255-x, 255-y, (data & 0x80)!=0 ? col : Machine.pens[0]);
+				plot_pixel.handler(tmpbitmap, 255-x, 255-y, (data & 0x80)!=0 ? col : Machine.pens.read(0));
 			else
-				plot_pixel.handler(tmpbitmap,     x,     y, (data & 0x80)!=0 ? col : Machine.pens[0]);
+				plot_pixel.handler(tmpbitmap,     x,     y, (data & 0x80)!=0 ? col : Machine.pens.read(0));
 	
 		    x++;
 		    data <<= 1;

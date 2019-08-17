@@ -274,8 +274,8 @@ public class grchamp
 	
 	static int collision_check( mame_bitmap bitmap, int which )
 	{
-		int bgcolor = Machine.pens[0];
-		int sprite_transp = Machine.pens[0x24];
+		int bgcolor = Machine.pens.read(0);
+		int sprite_transp = Machine.pens.read(0x24);
 		rectangle clip = new rectangle(Machine.visible_area);
 		int y0 = 240-grchamp_player_ypos;
 		int x0 = 256-grchamp_player_xpos;
@@ -343,7 +343,7 @@ public class grchamp
 	static void draw_fog( mame_bitmap bitmap, int bFog ){
 		int x0 = 256-grchamp_player_xpos-64;
 		int y0 = 240-grchamp_player_ypos-64;
-		int color = Machine.pens[bFog!=0?0x40:0x00];
+		int color = Machine.pens.read(bFog!=0?0x40:0x00);
 	
 		copybitmap(
 			headlight_bitmap, /* dest */
@@ -391,7 +391,7 @@ public class grchamp
 	
 	static void draw_radar( mame_bitmap bitmap ){
 		UBytePtr source = new UBytePtr(grchamp_radar);
-		int color = Machine.pens[3];
+		int color = Machine.pens.read(3);
 		int offs;
 		for( offs=0; offs<0x400; offs++ ){
 			int data = source.read(offs);

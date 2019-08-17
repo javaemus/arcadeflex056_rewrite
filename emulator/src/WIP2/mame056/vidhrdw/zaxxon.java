@@ -427,7 +427,7 @@ public class zaxxon {
                     }
                 }
             } else {
-                fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
             }
 
             draw_sprites(bitmap);
@@ -476,7 +476,7 @@ public class zaxxon {
                     copyscrollbitmap(bitmap, backgroundbitmap1, 0, null, 1, new int[]{scroll}, Machine.visible_area, TRANSPARENCY_NONE, 0);
                 }
             } else {
-                fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
             }
 
             draw_sprites(bitmap);
@@ -518,7 +518,7 @@ public class zaxxon {
                     copyscrollbitmap(bitmap, backgroundbitmap1, 0, null, 1, new int[]{scroll}, Machine.visible_area, TRANSPARENCY_NONE, 0);
                 }
             } else {
-                fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
             }
 
             /* draw the frontmost playfield. They are characters, but draw them as sprites */

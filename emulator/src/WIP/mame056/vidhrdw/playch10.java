@@ -154,13 +154,13 @@ public class playch10
 		else
 		{
 			/* the ppu is masked, clear out the area */
-			fillbitmap( bitmap, Machine.pens[0], bottom_monitor );
+			fillbitmap( bitmap, Machine.pens.read(0), bottom_monitor );
 		}
 	
 		/* When the bios is accessing vram, the video circuitry cant access it */
 		if ( pc10_sdcs != 0)
 		{
-			fillbitmap( bitmap, Machine.pens[0], top_monitor );
+			fillbitmap( bitmap, Machine.pens.read(0), top_monitor );
 			return;
 		}
 	

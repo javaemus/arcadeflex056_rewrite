@@ -24,6 +24,7 @@ import static WIP2.mame056.vidhrdw.generic.*;
 import static mame056.palette.*;
 // refactor
 import static WIP2.arcadeflex036.osdepend.logerror;
+import WIP2.common.subArrays.IntArray;
 
 public class thief
 {
@@ -178,7 +179,7 @@ public class thief
 	public static VhUpdatePtr thief_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) {
 		int offs;
 		int flipscreen = thief_video_control&1;
-		int[] pal_data = Machine.pens;
+		IntArray pal_data = Machine.pens;
 		UBytePtr dirty = new UBytePtr(dirtybuffer);
 		UBytePtr source = new UBytePtr(videoram);
 		mame_bitmap page;
@@ -204,24 +205,24 @@ public class thief
 				if( flipscreen != 0 ){
 					for( bit=0; bit<8; bit++ ){
 						plot_pixel.handler( page, 0xff - (xpos+bit), 0xff - ypos,
-							pal_data[
+							pal_data.read(
 								(((plane0<<bit)&0x80)>>7) |
 								(((plane1<<bit)&0x80)>>6) |
 								(((plane2<<bit)&0x80)>>5) |
 								(((plane3<<bit)&0x80)>>4)
-							]
+                                                        )
 						);
 					}
 				}
 				else {
 					for( bit=0; bit<8; bit++ ){
 						plot_pixel.handler( page, xpos+bit, ypos,
-							pal_data[
+							pal_data.read(
 								(((plane0<<bit)&0x80)>>7) |
 								(((plane1<<bit)&0x80)>>6) |
 								(((plane2<<bit)&0x80)>>5) |
 								(((plane3<<bit)&0x80)>>4)
-							]
+                                                        )
 						);
 					}
 				}

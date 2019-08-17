@@ -638,9 +638,9 @@ public class slikshot
 				py >= 0 && py < bitmap.height)
 			{
 				if (bitmap.depth == 8)
-					new UBytePtr(bitmap.line[py]).write(px, Machine.pens[256]);
+					new UBytePtr(bitmap.line[py]).write(px, Machine.pens.read(256));
 				else
-					new UShortPtr(bitmap.line[py]).write(px, (char) Machine.pens[256]);
+					new UShortPtr(bitmap.line[py]).write(px, (char) Machine.pens.read(256));
 			}
 			xstart += dx;
 			ystart += dy;

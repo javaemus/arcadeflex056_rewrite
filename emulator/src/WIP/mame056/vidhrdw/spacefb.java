@@ -113,7 +113,7 @@ public class spacefb
 	
 	
 		/* Clear the bitmap */
-		fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 	
 		/* Draw the sprite/chars */
 		spriteno = (video_control & 0x20)!=0 ? 0x80 : 0x00;

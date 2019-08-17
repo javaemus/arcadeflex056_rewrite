@@ -89,7 +89,7 @@ public class dotrikun
 		{
 			for (i = 0; i < 8; i++)
 			{
-				color = Machine.pens[((data >> i) & 0x01)];
+				color = Machine.pens.read(((data >> i) & 0x01));
 	
 				/* I think the video hardware doubles pixels, screen would be too small otherwise */
 				plot_pixel.handler(Machine.scrbitmap, x + 2*(7 - i),   y,   color);

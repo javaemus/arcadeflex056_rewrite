@@ -119,7 +119,7 @@ public class nyny {
             d = data & 7;
             for (z = 0; z < 8; z++) {
                 c = v & 1;
-                plot_pixel.handler(tmpbitmap1, x * 8 + z, y, Machine.pens[c * d]);
+                plot_pixel.handler(tmpbitmap1, x * 8 + z, y, Machine.pens.read(c * d));
                 v >>= 1;
             }
         }
@@ -136,7 +136,7 @@ public class nyny {
 
             for (z = 0; z < 8; z++) {
                 c = data & 1;
-                plot_pixel.handler(tmpbitmap1, x * 8 + z, y, Machine.pens[c * d]);
+                plot_pixel.handler(tmpbitmap1, x * 8 + z, y, Machine.pens.read(c * d));
                 data >>= 1;
             }
         }
@@ -154,7 +154,7 @@ public class nyny {
             d = data & 7;
             for (z = 0; z < 8; z++) {
                 c = v & 1;
-                plot_pixel.handler(tmpbitmap2, x * 8 + z, y, Machine.pens[c * d]);
+                plot_pixel.handler(tmpbitmap2, x * 8 + z, y, Machine.pens.read(c * d));
                 v >>= 1;
             }
 
@@ -172,7 +172,7 @@ public class nyny {
 
             for (z = 0; z < 8; z++) {
                 c = data & 1;
-                plot_pixel.handler(tmpbitmap2, x * 8 + z, y, Machine.pens[c * d]);
+                plot_pixel.handler(tmpbitmap2, x * 8 + z, y, Machine.pens.read(c * d));
                 data >>= 1;
             }
         }

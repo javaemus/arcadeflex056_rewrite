@@ -503,8 +503,8 @@ public class taitosj
 		{
 			for(x = minx;x < maxx;x++)
 			{
-				if ((read_pixel.handler(sprite_sprite_collbitmap1, x, y) != Machine.pens[0]) &&
-				    (read_pixel.handler(sprite_sprite_collbitmap2, x, y) != Machine.pens[0]))
+				if ((read_pixel.handler(sprite_sprite_collbitmap1, x, y) != Machine.pens.read(0)) &&
+				    (read_pixel.handler(sprite_sprite_collbitmap2, x, y) != Machine.pens.read(0)))
 				{
 					return 1;  /* collided */
 				}
@@ -642,22 +642,22 @@ public class taitosj
 		{
 			for (x = minx;x < maxx;x++)
 			{
-				if (read_pixel.handler(sprite_plane_collbitmap1, x-minx, y-miny) != Machine.pens[0]) /* is there anything to check for ? */
+				if (read_pixel.handler(sprite_plane_collbitmap1, x-minx, y-miny) != Machine.pens.read(0)) /* is there anything to check for ? */
 				{
-					if (check_playfield1!=0 && (read_pixel.handler(sprite_plane_collbitmap2[0], x, y) != Machine.pens[0]))
+					if (check_playfield1!=0 && (read_pixel.handler(sprite_plane_collbitmap2[0], x, y) != Machine.pens.read(0)))
 					{
 						result |= 1;  /* collided */
 						if (result == 7)  return result;//goto done;
 						check_playfield1 = 0;
 					}
-					if (check_playfield2!=0 && (read_pixel.handler(sprite_plane_collbitmap2[1], x, y) != Machine.pens[0]))
+					if (check_playfield2!=0 && (read_pixel.handler(sprite_plane_collbitmap2[1], x, y) != Machine.pens.read(0)))
 					{
 						result |= 2;  /* collided */
 						if (result == 7)  return result;//goto done;
 						check_playfield2 = 0;
 	
 					}
-					if (check_playfield3!=0 && (read_pixel.handler(sprite_plane_collbitmap2[2], x, y) != Machine.pens[0]))
+					if (check_playfield3!=0 && (read_pixel.handler(sprite_plane_collbitmap2[2], x, y) != Machine.pens.read(0)))
 					{
 						result |= 4;  /* collided */
 						if (result == 7)  return result;//goto done;
@@ -904,7 +904,7 @@ public class taitosj
 		calculate_sprites_areas();
 	
 		/* first of all, fill the screen with the background color */
-		fillbitmap(bitmap,Machine.pens[8 * (taitosj_colorbank.read(1) & 0x07)],
+		fillbitmap(bitmap,Machine.pens.read(8 * (taitosj_colorbank.read(1) & 0x07)),
 				Machine.visible_area);
 	
 		for (i = 0;i < 4;i++)

@@ -564,7 +564,7 @@ public class dynax
 	
 		fillbitmap(
 			bitmap,
-			Machine.pens[(dynax_blit_backpen & 0xff) + (dynax_blit_palbank & 1) * 256],
+			Machine.pens.read((dynax_blit_backpen & 0xff) + (dynax_blit_palbank & 1) * 256),
 			Machine.visible_area);
 	
 		if ((layers_ctrl & 1) != 0)	sprtmtch_copylayer( bitmap, 0 );

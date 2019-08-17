@@ -811,7 +811,7 @@ public class astrocde
 						pen = colors[line][color];
 				}
 	
-				plot_pixel.handler(bitmap,x,line,Machine.pens[pen]);
+				plot_pixel.handler(bitmap,x,line,Machine.pens.read(pen));
 	
 				data >>= 2;
 			}

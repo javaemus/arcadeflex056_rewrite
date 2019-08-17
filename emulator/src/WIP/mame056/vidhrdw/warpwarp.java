@@ -177,7 +177,7 @@ public class warpwarp
 				int i,j;
 	
 	
-				colour = Machine.pens[0xf6];	/* white */
+				colour = Machine.pens.read(0xf6);	/* white */
 	
 				for (i = 0;i < 4;i++)
 				{

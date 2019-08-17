@@ -935,7 +935,7 @@ public class galaxian {
                     /* yellow missile, white shells (this is the terminology on the schematics) */
                     color = ((offs == 7 * 4) ? BULLETS_COLOR_BASE : BULLETS_COLOR_BASE + 1);
 
-                    plot_pixel.handler(bitmap, x, y, Machine.pens[color]);
+                    plot_pixel.handler(bitmap, x, y, Machine.pens.read(color));
                 }
             }
         }
@@ -957,7 +957,7 @@ public class galaxian {
             if (x >= Machine.visible_area.min_x
                     && x <= Machine.visible_area.max_x) {
                 /* yellow bullets */
-                plot_pixel.handler(bitmap, x, y, Machine.pens[BULLETS_COLOR_BASE]);
+                plot_pixel.handler(bitmap, x, y, Machine.pens.read(BULLETS_COLOR_BASE));
             }
         }
     };
@@ -972,7 +972,7 @@ public class galaxian {
 
             if (x >= Machine.visible_area.min_x
                     && x <= Machine.visible_area.max_x) {
-                plot_pixel.handler(bitmap, x, y, Machine.pens[32 + darkplnt_bullet_color]);
+                plot_pixel.handler(bitmap, x, y, Machine.pens.read(32 + darkplnt_bullet_color));
             }
         }
     };
@@ -987,7 +987,7 @@ public class galaxian {
 
                 if (x >= Machine.visible_area.min_x
                         && x <= Machine.visible_area.max_x) {
-                    plot_pixel.handler(bitmap, x, y, Machine.pens[BULLETS_COLOR_BASE]);
+                    plot_pixel.handler(bitmap, x, y, Machine.pens.read(BULLETS_COLOR_BASE));
                 }
             }
         }
@@ -997,9 +997,9 @@ public class galaxian {
     public static _draw_background scramble_draw_background = new _draw_background() {
         public void handler(mame_bitmap bitmap) {
             if (background_enable != 0) {
-                fillbitmap(bitmap, Machine.pens[BACKGROUND_COLOR_BASE], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(BACKGROUND_COLOR_BASE), Machine.visible_area);
             } else {
-                fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
             }
         }
     };
@@ -1008,7 +1008,7 @@ public class galaxian {
         public void handler(mame_bitmap bitmap) {
             int color = (background_blue << 2) | (background_green << 1) | background_red;
 
-            fillbitmap(bitmap, Machine.pens[BACKGROUND_COLOR_BASE + color], Machine.visible_area);
+            fillbitmap(bitmap, Machine.pens.read(BACKGROUND_COLOR_BASE + color), Machine.visible_area);
         }
     };
 
@@ -1016,11 +1016,11 @@ public class galaxian {
         public void handler(mame_bitmap bitmap) {
             /* color split point verified on real machine */
             if (flip_screen_x[0] != 0) {
-                plot_box.handler(bitmap, 0, 0, 128, 256, Machine.pens[0]);
-                plot_box.handler(bitmap, 128, 0, 128, 256, Machine.pens[BACKGROUND_COLOR_BASE]);
+                plot_box.handler(bitmap, 0, 0, 128, 256, Machine.pens.read(0));
+                plot_box.handler(bitmap, 128, 0, 128, 256, Machine.pens.read(BACKGROUND_COLOR_BASE));
             } else {
-                plot_box.handler(bitmap, 0, 0, 128, 256, Machine.pens[BACKGROUND_COLOR_BASE]);
-                plot_box.handler(bitmap, 128, 0, 128, 256, Machine.pens[0]);
+                plot_box.handler(bitmap, 0, 0, 128, 256, Machine.pens.read(BACKGROUND_COLOR_BASE));
+                plot_box.handler(bitmap, 128, 0, 128, 256, Machine.pens.read(0));
             }
         }
     };
@@ -1058,7 +1058,7 @@ public class galaxian {
                     sx = 8 * x;
                 }
 
-                plot_box.handler(bitmap, sx, 0, 8, 256, Machine.pens[BACKGROUND_COLOR_BASE + color]);
+                plot_box.handler(bitmap, sx, 0, 8, 256, Machine.pens.read(BACKGROUND_COLOR_BASE + color));
             }
         }
     };
@@ -1069,16 +1069,16 @@ public class galaxian {
                 int x;
 
                 for (x = 0; x < 128; x++) {
-                    plot_box.handler(bitmap, x, 0, 1, 256, Machine.pens[BACKGROUND_COLOR_BASE + x]);
+                    plot_box.handler(bitmap, x, 0, 1, 256, Machine.pens.read(BACKGROUND_COLOR_BASE + x));
                 }
 
                 for (x = 0; x < 120; x++) {
-                    plot_box.handler(bitmap, x + 128, 0, 1, 256, Machine.pens[BACKGROUND_COLOR_BASE + x + 128]);
+                    plot_box.handler(bitmap, x + 128, 0, 1, 256, Machine.pens.read(BACKGROUND_COLOR_BASE + x + 128));
                 }
 
-                plot_box.handler(bitmap, 248, 0, 16, 256, Machine.pens[BACKGROUND_COLOR_BASE]);
+                plot_box.handler(bitmap, 248, 0, 16, 256, Machine.pens.read(BACKGROUND_COLOR_BASE));
             } else {
-                fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
             }
         }
     };
@@ -1089,16 +1089,16 @@ public class galaxian {
                 int x;
 
                 for (x = 0; x < 128; x++) {
-                    plot_box.handler(bitmap, x, 0, 1, 256, Machine.pens[BACKGROUND_COLOR_BASE + x]);
+                    plot_box.handler(bitmap, x, 0, 1, 256, Machine.pens.read(BACKGROUND_COLOR_BASE + x));
                 }
 
                 for (x = 0; x < 120; x++) {
-                    plot_box.handler(bitmap, x + 128, 0, 1, 256, Machine.pens[BACKGROUND_COLOR_BASE + x + 8]);
+                    plot_box.handler(bitmap, x + 128, 0, 1, 256, Machine.pens.read(BACKGROUND_COLOR_BASE + x + 8));
                 }
 
-                plot_box.handler(bitmap, 248, 0, 16, 256, Machine.pens[BACKGROUND_COLOR_BASE]);
+                plot_box.handler(bitmap, 248, 0, 16, 256, Machine.pens.read(BACKGROUND_COLOR_BASE));
             } else {
-                fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
             }
         }
     };
@@ -1123,7 +1123,7 @@ public class galaxian {
                         color = prom.read(0x20 + x - 1);
                     }
 
-                    plot_box.handler(bitmap, 8 * (31 - x), 0, 8, 256, Machine.pens[BACKGROUND_COLOR_BASE + color]);
+                    plot_box.handler(bitmap, 8 * (31 - x), 0, 8, 256, Machine.pens.read(BACKGROUND_COLOR_BASE + color));
                 }
             } else {
                 for (x = 0; x < 32; x++) {
@@ -1135,7 +1135,7 @@ public class galaxian {
                         color = prom.read(x + 1);
                     }
 
-                    plot_box.handler(bitmap, 8 * x, 0, 8, 256, Machine.pens[BACKGROUND_COLOR_BASE + color]);
+                    plot_box.handler(bitmap, 8 * x, 0, 8, 256, Machine.pens.read(BACKGROUND_COLOR_BASE + color));
                 }
             }
         }
@@ -1220,7 +1220,7 @@ public class galaxian {
             y = 255 - y;
         }
 
-        plot_pixel.handler(bitmap, x, y, Machine.pens[STARS_COLOR_BASE + color]);
+        plot_pixel.handler(bitmap, x, y, Machine.pens.read(STARS_COLOR_BASE + color));
     }
 
     public static _draw_stars galaxian_draw_stars = new _draw_stars() {
@@ -1462,7 +1462,7 @@ public class galaxian {
             } else {
                 if (draw_stars != null) {
                     /* black base for stars */
-                    fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+                    fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
                 }
             }
 

@@ -361,12 +361,12 @@ public class hyhoo
 				if (tflag1 != 0)
 				{
 					hyhoo_videoram.write((dy * Machine.drv.screen_width) + dx1, drawcolor1);
-					plot_pixel.handler(hyhoo_tmpbitmap, dx1, dy, Machine.pens[drawcolor1]);
+					plot_pixel.handler(hyhoo_tmpbitmap, dx1, dy, Machine.pens.read(drawcolor1));
 				}
 				if (tflag2 != 0)
 				{
 					hyhoo_videoram.write((dy * Machine.drv.screen_width) + dx2, drawcolor2);
-					plot_pixel.handler(hyhoo_tmpbitmap, dx2, dy, Machine.pens[drawcolor2]);
+					plot_pixel.handler(hyhoo_tmpbitmap, dx2, dy, Machine.pens.read(drawcolor2));
 				}
 	
 				nb1413m3_busyctr++;
@@ -417,7 +417,7 @@ public class hyhoo
 				for (x = 0; x < Machine.drv.screen_width; x++)
 				{
 					color = hyhoo_videoram.read((y * Machine.drv.screen_width) + x);
-					plot_pixel.handler(hyhoo_tmpbitmap, x, y, Machine.pens[color]);
+					plot_pixel.handler(hyhoo_tmpbitmap, x, y, Machine.pens.read(color));
 				}
 			}
 		}
@@ -428,7 +428,7 @@ public class hyhoo
 		}
 		else
 		{
-			fillbitmap(bitmap, Machine.pens[0x0000], null);
+			fillbitmap(bitmap, Machine.pens.read(0x0000), null);
 		}
 	} };
 }

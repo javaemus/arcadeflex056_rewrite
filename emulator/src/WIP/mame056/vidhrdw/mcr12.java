@@ -336,7 +336,7 @@ public class mcr12
 	 *
 	 *************************************/
 	
-	public static void render_sprite_tile(mame_bitmap bitmap, int[] pens, int sx, int sy, int cont)
+	public static void render_sprite_tile(mame_bitmap bitmap, IntArray pens, int sx, int sy, int cont)
 	{
 		int x, y;
                 
@@ -350,7 +350,7 @@ public class mcr12
 			{
 				int pixel = src.read();
 				if ((pixel & 7)!=0)
-					plot_pixel.handler(bitmap, sx + x, sy, pens[pixel+cont]);
+					plot_pixel.handler(bitmap, sx + x, sy, pens.read(pixel+cont));
 				src.writeinc(0);
 			}
 		}

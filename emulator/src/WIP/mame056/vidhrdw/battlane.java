@@ -364,7 +364,7 @@ public class battlane
 					int data=(screen_bitmap.line[y]).read(x);
 					if (data != 0)
 					{
-						plot_pixel.handler(bitmap,255-x,255-y,Machine.pens[data]);
+						plot_pixel.handler(bitmap,255-x,255-y,Machine.pens.read(data));
 					}
 				}
 			}
@@ -378,7 +378,7 @@ public class battlane
 					int data=(screen_bitmap.line[y]).read(x);
 					if (data != 0)
 					{
-						plot_pixel.handler(bitmap,x,y,Machine.pens[data]);
+						plot_pixel.handler(bitmap,x,y,Machine.pens.read(data));
 					}
 				}
 			}

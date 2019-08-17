@@ -51,7 +51,7 @@ public class leprechn
 	
 	    if (pending != 0)
 	    {
-			plot_pixel.handler(Machine.scrbitmap, pending_x, pending_y, Machine.pens[pending_color]);
+			plot_pixel.handler(Machine.scrbitmap, pending_x, pending_y, Machine.pens.read(pending_color));
 	        videoram.write(pending_y * screen_width + pending_x,pending_color);
 	
 	        pending = 0;
@@ -133,7 +133,7 @@ public class leprechn
 	
 	    // Clear Bitmap
 	    case 0x18:
-	        fillbitmap(Machine.scrbitmap,Machine.pens[data],null);
+	        fillbitmap(Machine.scrbitmap,Machine.pens.read(data),null);
 	        memset(videoram, data, screen_width * Machine.drv.screen_height);
 	        return;
 	    }
@@ -198,7 +198,7 @@ public class leprechn
 			{
 				for (sy = 0; sy < Machine.drv.screen_height; sy++)
 				{
-					plot_pixel.handler(Machine.scrbitmap, sx, sy, Machine.pens[videoram.read(sy * screen_width + sx)]);
+					plot_pixel.handler(Machine.scrbitmap, sx, sy, Machine.pens.read(videoram.read(sy * screen_width + sx)));
 				}
 			}
 		}

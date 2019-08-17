@@ -57,7 +57,7 @@ public class spcforce
 	
 		/* draw the characters as sprites because they could be overlapping */
 	
-		fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 	
 	
 		for (offs = 0; offs < videoram_size[0]; offs++)

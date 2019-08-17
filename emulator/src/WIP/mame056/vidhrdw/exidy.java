@@ -381,7 +381,7 @@ public class exidy
             public void handler() {
                 int enable_set = ((exidy_sprite_enable.read() & 0x20) != 0)?1:0;
                 rectangle clip = new rectangle( 0, 15, 0, 15 );
-                int pen0 = Machine.pens[0];
+                int pen0 = Machine.pens.read(0);
                 int sx, sy, org_x, org_y;
 		int count = 0;
 	

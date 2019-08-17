@@ -137,7 +137,7 @@ public class redclash
 		int i,offs;
 	
 	
-		fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 	
 		for (offs = spriteram_size[0] - 0x20;offs >= 0;offs -= 0x20)
 		{
@@ -233,7 +233,7 @@ public class redclash
 	
 			if (sx >= Machine.visible_area.min_x && sx <= Machine.visible_area.max_x &&
 					sy >= Machine.visible_area.min_y && sy <= Machine.visible_area.max_y)
-				plot_pixel.handler(bitmap,sx,sy,Machine.pens[0x0e]);
+				plot_pixel.handler(bitmap,sx,sy,Machine.pens.read(0x0e));
 		}
 	
 		for (offs = 0;offs < 0x400;offs++)

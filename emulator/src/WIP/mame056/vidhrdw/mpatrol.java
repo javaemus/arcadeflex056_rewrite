@@ -449,13 +449,13 @@ public class mpatrol
 			rectangle clip=new rectangle();
 	
 			get_clip(clip, 7*8, bg2ypos-1);
-			fillbitmap(bitmap,Machine.pens[0],clip);
+			fillbitmap(bitmap,Machine.pens.read(0),clip);
 	
 			draw_background(bitmap, bg2xpos, bg2ypos, bg1ypos + BGHEIGHT - 1, 0, TRANSPARENCY_NONE);
 			draw_background(bitmap, bg1xpos, bg1ypos, Machine.visible_area.max_y,
 			                (bgcontrol == 0x04) ? 1 : 2, TRANSPARENCY_COLOR);
 		}
-		else fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+		else fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 	
 	
 		/* copy the temporary bitmap to the screen */

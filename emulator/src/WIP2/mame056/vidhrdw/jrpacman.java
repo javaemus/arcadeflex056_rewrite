@@ -280,7 +280,7 @@ public class jrpacman {
 
             }
             if ((jrpacman_bgpriority.read() & 1) != 0) {
-                fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
             } else {
                 copyscrollbitmap(bitmap, tmpbitmap, 0, null, 36, scrolly, Machine.visible_area, TRANSPARENCY_NONE, 0);
             }

@@ -341,7 +341,7 @@ public class pacland {
             }
 
             /* copy scrolled contents */
-            fillbitmap(tmpbitmap3, Machine.pens[0x7f], Machine.visible_area);
+            fillbitmap(tmpbitmap3, Machine.pens.read(0x7f), Machine.visible_area);
             {
                 int i;
                 int[] scroll = new int[32];
@@ -362,7 +362,7 @@ public class pacland {
             pacland_draw_sprites(bitmap, 0);
 
             /* redraw the tiles which have priority over the sprites */
-            fillbitmap(tmpbitmap3, Machine.pens[0x7f], Machine.visible_area);
+            fillbitmap(tmpbitmap3, Machine.pens.read(0x7f), Machine.visible_area);
             for (offs = 0; offs < videoram_size[0] / 2; offs += 2) {
                 if ((videoram.read(offs + 1) & 0x20) != 0) {
                     int scroll;

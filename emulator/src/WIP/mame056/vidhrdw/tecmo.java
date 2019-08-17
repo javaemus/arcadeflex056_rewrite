@@ -281,7 +281,7 @@ public class tecmo
 	public static VhUpdatePtr tecmo_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
 		fillbitmap(priority_bitmap,0,null);
-		fillbitmap(bitmap,Machine.pens[0x100],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(0x100),Machine.visible_area);
 		/*TODO*///tilemap_draw(bitmap,bg_tilemap,0,1);
                 tilemap_draw(bitmap,bg_tilemap,1);
 		/*TODO*///tilemap_draw(bitmap,fg_tilemap,0,2);

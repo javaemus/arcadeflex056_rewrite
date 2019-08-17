@@ -55,8 +55,8 @@ public class epos {
             x = (offset % 136) * 2;
             y = (offset / 136);
 
-            plot_pixel.handler(Machine.scrbitmap, x, y, Machine.pens[current_palette | (data & 0x0f)]);
-            plot_pixel.handler(Machine.scrbitmap, x + 1, y, Machine.pens[current_palette | (data >> 4)]);
+            plot_pixel.handler(Machine.scrbitmap, x, y, Machine.pens.read(current_palette | (data & 0x0f)));
+            plot_pixel.handler(Machine.scrbitmap, x + 1, y, Machine.pens.read(current_palette | (data >> 4)));
         }
     };
 

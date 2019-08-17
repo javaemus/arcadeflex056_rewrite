@@ -220,7 +220,7 @@ public class exedexes
 				}
 			}
 		}
-		else fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+		else fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 	
 	
 		if (objon!=0)

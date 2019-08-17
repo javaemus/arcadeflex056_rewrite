@@ -253,7 +253,7 @@ public class kangaroo
 			y = bitmap.height - 1 - y;
 		}
 	
-		plot_pixel.handler(bitmap, x, y, Machine.pens[((col & 0x08)!=0 ? 0 : color_base) + (col & 0x07)]);
+		plot_pixel.handler(bitmap, x, y, Machine.pens.read(((col & 0x08)!=0 ? 0 : color_base) + (col & 0x07)));
 	}
 	
 	public static void kangaroo_redraw_4pixels(int x, int y)

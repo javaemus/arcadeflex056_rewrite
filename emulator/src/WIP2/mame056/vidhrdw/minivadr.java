@@ -61,7 +61,7 @@ public class minivadr {
                     && y >= Machine.visible_area.min_y
                     && y <= Machine.visible_area.max_y) {
                 for (i = 0; i < 8; i++) {
-                    color = Machine.pens[((data >> i) & 0x01)];
+                    color = Machine.pens.read(((data >> i) & 0x01));
 
                     plot_pixel.handler(Machine.scrbitmap, x + (7 - i), y, color);
                 }

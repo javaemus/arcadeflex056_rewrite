@@ -267,7 +267,7 @@ public class thepit
 				/* set up the background color */
 				Machine.gfx[bank].
 						colortable.write(color * Machine.gfx[bank].color_granularity,
-						Machine.pens[bgcolor]);
+						Machine.pens.read(bgcolor));
 	
 				drawgfx(priority == 0 ? tmpbitmap : bitmap,Machine.gfx[bank],
 						code,

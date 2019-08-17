@@ -91,7 +91,7 @@ public class rollrace
 		int col;
 	
 		/* fill in background colour*/
-		fillbitmap(bitmap,Machine.pens[ra_bkgpen],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(ra_bkgpen),Machine.visible_area);
 	
 		/* draw road */
 		for (offs = videoram_size[0] - 1;offs >= 0;offs--)

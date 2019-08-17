@@ -112,7 +112,7 @@ public class lsasquad {
 
     public static VhUpdatePtr lsasquad_vh_screenrefresh = new VhUpdatePtr() {
         public void handler(mame_bitmap bitmap, int full_refresh) {
-            fillbitmap(bitmap, Machine.pens[511], Machine.visible_area);
+            fillbitmap(bitmap, Machine.pens.read(511), Machine.visible_area);
 
             draw_layer(bitmap, new UBytePtr(lsasquad_scrollram, 0x000));
             draw_layer(bitmap, new UBytePtr(lsasquad_scrollram, 0x080));

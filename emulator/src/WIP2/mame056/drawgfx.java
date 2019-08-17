@@ -1143,7 +1143,7 @@ public class drawgfx {
         } else if (transparency == TRANSPARENCY_PEN) {
             transparency = TRANSPARENCY_PEN_RAW;
         } else if (transparency == TRANSPARENCY_COLOR) {
-            transparent_color = Machine.pens[transparent_color];
+            transparent_color = Machine.pens.read(transparent_color);
             transparency = TRANSPARENCY_PEN_RAW;
         }
 
@@ -1237,7 +1237,7 @@ public class drawgfx {
         } else if (transparency == TRANSPARENCY_PEN) {
             transparency = TRANSPARENCY_PEN_RAW;
         } else if (transparency == TRANSPARENCY_COLOR) {
-            transparent_color = Machine.pens[transparent_color];
+            transparent_color = Machine.pens.read(transparent_color);
             transparency = TRANSPARENCY_PEN_RAW;
         }
 
@@ -1532,7 +1532,7 @@ public class drawgfx {
             if (transparency == TRANSPARENCY_COLOR)
             {
                     transparency = TRANSPARENCY_PEN;
-                    transparent_color = Machine.pens[transparent_color];
+                    transparent_color = Machine.pens.read(transparent_color);
             }
 
             if (transparency != TRANSPARENCY_PEN)
@@ -6131,7 +6131,7 @@ public class drawgfx {
     public static void blockmove_NtoN_opaque_remap(
 		UShortPtr srcdata,int srcwidth,int srcheight,int srcmodulo,
 		UShortPtr dstdata,int dstmodulo,
-		int[] paldata)
+		IntArray paldata)
     {
 	int end;
 
@@ -6143,19 +6143,19 @@ public class drawgfx {
 		end = dstdata.offset/2 + srcwidth;
 		while (dstdata.offset/2 <= end - 8)
 		{
-			dstdata.write(0, (char) paldata[srcdata.read(0)]);
-			dstdata.write(1, (char) paldata[srcdata.read(1)]);
-			dstdata.write(2, (char) paldata[srcdata.read(2)]);
-			dstdata.write(3, (char) paldata[srcdata.read(3)]);
-			dstdata.write(4, (char) paldata[srcdata.read(4)]);
-			dstdata.write(5, (char) paldata[srcdata.read(5)]);
-			dstdata.write(6, (char) paldata[srcdata.read(6)]);
-			dstdata.write(7, (char) paldata[srcdata.read(7)]);
+			dstdata.write(0, (char) paldata.read(srcdata.read(0)));
+			dstdata.write(1, (char) paldata.read(srcdata.read(1)));
+			dstdata.write(2, (char) paldata.read(srcdata.read(2)));
+			dstdata.write(3, (char) paldata.read(srcdata.read(3)));
+			dstdata.write(4, (char) paldata.read(srcdata.read(4)));
+			dstdata.write(5, (char) paldata.read(srcdata.read(5)));
+			dstdata.write(6, (char) paldata.read(srcdata.read(6)));
+			dstdata.write(7, (char) paldata.read(srcdata.read(7)));
 			dstdata.inc(8);
 			srcdata.inc(8);
 		}
 		while (dstdata.offset/2 < end){
-			dstdata.write((char) paldata[srcdata.read(0)]);
+			dstdata.write((char) paldata.read(srcdata.read(0)));
                         dstdata.inc();
                         srcdata.inc();
                 }
@@ -8766,7 +8766,7 @@ public class drawgfx {
     }
 
     public static void blockmove_NtoN_blend_remap16(UShortPtr srcdata, int srcwidth, int srcheight, int srcmodulo,
-            UShortPtr dstdata, int dstmodulo, int[] paldata, int srcshift) {
+            UShortPtr dstdata, int dstmodulo, IntArray paldata, int srcshift) {
 
         srcmodulo -= srcwidth;
         dstmodulo -= srcwidth;
@@ -8774,20 +8774,20 @@ public class drawgfx {
         while (srcheight != 0) {
             int end = dstdata.offset / 2 + srcwidth;
             while (dstdata.offset / 2 <= end - 8) {
-                dstdata.write(0, (char) paldata[dstdata.read(0) | (srcdata.read(0) << srcshift)]);
-                dstdata.write(1, (char) paldata[dstdata.read(1) | (srcdata.read(1) << srcshift)]);
-                dstdata.write(2, (char) paldata[dstdata.read(2) | (srcdata.read(2) << srcshift)]);
-                dstdata.write(3, (char) paldata[dstdata.read(3) | (srcdata.read(3) << srcshift)]);
-                dstdata.write(4, (char) paldata[dstdata.read(4) | (srcdata.read(4) << srcshift)]);
-                dstdata.write(5, (char) paldata[dstdata.read(5) | (srcdata.read(5) << srcshift)]);
-                dstdata.write(6, (char) paldata[dstdata.read(6) | (srcdata.read(6) << srcshift)]);
-                dstdata.write(7, (char) paldata[dstdata.read(7) | (srcdata.read(7) << srcshift)]);
+                dstdata.write(0, (char) paldata.read(dstdata.read(0) | (srcdata.read(0) << srcshift)));
+                dstdata.write(1, (char) paldata.read(dstdata.read(1) | (srcdata.read(1) << srcshift)));
+                dstdata.write(2, (char) paldata.read(dstdata.read(2) | (srcdata.read(2) << srcshift)));
+                dstdata.write(3, (char) paldata.read(dstdata.read(3) | (srcdata.read(3) << srcshift)));
+                dstdata.write(4, (char) paldata.read(dstdata.read(4) | (srcdata.read(4) << srcshift)));
+                dstdata.write(5, (char) paldata.read(dstdata.read(5) | (srcdata.read(5) << srcshift)));
+                dstdata.write(6, (char) paldata.read(dstdata.read(6) | (srcdata.read(6) << srcshift)));
+                dstdata.write(7, (char) paldata.read(dstdata.read(7) | (srcdata.read(7) << srcshift)));
                 dstdata.inc(8);
                 srcdata.inc(8);
             }
             while (dstdata.offset / 2 < end) {
                 //*dstdata = paldata[*dstdata | (*(srcdata++) << srcshift)];
-                dstdata.write((char) paldata[dstdata.read(0) | ((srcdata.read(0)) << srcshift)]);
+                dstdata.write((char) paldata.read(dstdata.read(0) | ((srcdata.read(0)) << srcshift)));
                 srcdata.inc();
                 dstdata.inc();
             }

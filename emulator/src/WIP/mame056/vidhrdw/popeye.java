@@ -197,7 +197,7 @@ public class popeye
 		sx = 8 * (offset % 64);
 		sy = 4 * (offset / 64);
 	
-		colour = Machine.pens[data & 0x0f];
+		colour = Machine.pens.read(data & 0x0f);
 		for (y = 0; y < 4; y++)
 		{
 			for (x = 0; x < 8; x++)
@@ -301,7 +301,7 @@ public class popeye
 	
 		if (popeye_background_pos.read(0) == 0)	/* no background */
 		{
-			fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+			fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 		}
 		else
 		{

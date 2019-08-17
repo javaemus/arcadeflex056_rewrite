@@ -166,7 +166,7 @@ public class rockola
 			backcolor = data & 7;
 	
 			for (i = 0;i < 32;i += 4)
-				Machine.gfx[1].colortable.write(i, Machine.pens[4 * backcolor + 0x20]);
+				Machine.gfx[1].colortable.write(i, Machine.pens.read(4 * backcolor + 0x20));
 	
 			schedule_full_refresh();
 		}
@@ -206,7 +206,7 @@ public class rockola
 			backcolor = data & 3;
 	
 			for (i = 0;i < 16;i += 4)
-				Machine.gfx[1].colortable.write(i, Machine.pens[backcolor + 0x10]);
+				Machine.gfx[1].colortable.write(i, Machine.pens.read(backcolor + 0x10));
 	
 			schedule_full_refresh();
 		}

@@ -132,7 +132,7 @@ public class ambush
 		int offs;
 	
 	
-		fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 	
 	
 		/* Draw the background priority characters */

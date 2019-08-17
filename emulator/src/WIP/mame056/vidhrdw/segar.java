@@ -183,9 +183,9 @@ public class segar {
                 palette_set_color(offset + 1, r, g, b);
 
                 if (data == 0) {
-                    Machine.gfx[0].colortable.write(offset, Machine.pens[0]);
+                    Machine.gfx[0].colortable.write(offset, Machine.pens.read(0));
                 } else {
-                    Machine.gfx[0].colortable.write(offset, Machine.pens[offset + 1]);
+                    Machine.gfx[0].colortable.write(offset, Machine.pens.read(offset + 1));
                 }
 
                 // refresh the screen if the color switched to or from black
@@ -301,7 +301,7 @@ public class segar {
         }
 
         /* copy the character mapped graphics */
-        copybitmap(bitmap, tmpbitmap, 0, 0, 0, 0, Machine.visible_area, copy_transparency, Machine.pens[0]);
+        copybitmap(bitmap, tmpbitmap, 0, 0, 0, 0, Machine.visible_area, copy_transparency, Machine.pens.read(0));
 
         sv.char_refresh = 0;
         sv.refresh = 0;
@@ -557,7 +557,7 @@ public class segar {
             }
 
             if (sv.fill_background == 1) {
-                fillbitmap(bitmap, Machine.pens[sv.backfill], Machine.visible_area);
+                fillbitmap(bitmap, Machine.pens.read(sv.backfill), Machine.visible_area);
             }
 
             /* Refresh the "standard" graphics */

@@ -1,6 +1,12 @@
 /**
  * Ported to 0.56
  */
+/**
+ * Changelog
+ * ---------
+ * 17/08/2019 - changed Machine.pens to be IntArray (shadow)
+ * 16/08/2019 - rewrote palette main functionality for 16-bit (shadow)
+ */
 package mame056;
 
 import static WIP2.common.subArrays.*;
@@ -69,7 +75,7 @@ public class palette {
             colormode = PALETTIZED_16BIT;
         }
 
-        Machine.pens = new int[total_colors * 4];//malloc(total_colors * sizeof(*Machine->pens));
+        Machine.pens = new IntArray(total_colors * 4);//malloc(total_colors * sizeof(*Machine->pens));
 
         if (Machine.drv.color_table_len != 0) {
             Machine.game_colortable = new char[Machine.drv.color_table_len * 2];
@@ -181,7 +187,7 @@ public class palette {
                 }
 
                 for (i = 0; i < total_colors; i++) {
-                    Machine.pens[i] = i;
+                    Machine.pens.write(i, i);
                 }
 
                 /* refresh the palette to support shadows in PROM games */
@@ -231,7 +237,7 @@ public class palette {
 
             /* check for invalid colors set by Machine->drv->vh_init_palette */
             if (color < total_colors) {
-                Machine.remapped_colortable.write(i, Machine.pens[color]);
+                Machine.remapped_colortable.write(i, Machine.pens.read(color));
             } else {
                 usrintf_showmessage("colortable[%d] (=%d) out of range (total_colors = %d)", i, color, total_colors);
             }
@@ -310,7 +316,7 @@ public class palette {
         u8_actual_palette[3 * color + 2] = (char) blue;
 
         if (palette_initialized != 0) {
-            osd_modify_pen(Machine.pens[color], red, green, blue);
+            osd_modify_pen(Machine.pens.read(color), red, green, blue);
         }
     }
 

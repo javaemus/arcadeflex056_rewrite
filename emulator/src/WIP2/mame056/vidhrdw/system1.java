@@ -597,7 +597,7 @@ public class system1
 	
 		/* even if screen is off, sprites must still be drawn to update the collision table */
 		if ((system1_video_mode & 0x10) != 0)  /* screen off */
-			fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+			fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
             }
         };
 	
@@ -732,7 +732,7 @@ public class system1
 	
 		/* even if screen is off, sprites must still be drawn to update the collision table */
 		if ((system1_video_mode & 0x10) != 0)  /* screen off */
-			fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+			fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 	
 	
 	/*TODO*///#ifdef MAME_DEBUG
@@ -862,7 +862,7 @@ public class system1
 	
 		/* even if screen is off, sprites must still be drawn to update the collision table */
 		if ((system1_video_mode & 0x10) != 0)  /* screen off */
-			fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+			fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
             }
         };
 

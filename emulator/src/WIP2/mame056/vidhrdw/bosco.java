@@ -207,7 +207,7 @@ public class bosco
 					{
 						stars[total_stars].x = x;
 						stars[total_stars].y = y;
-						stars[total_stars].col = Machine.pens[color + STARS_COLOR_BASE];
+						stars[total_stars].col = Machine.pens.read(color + STARS_COLOR_BASE);
 						stars[total_stars].set = set;
 						if (++set > 3)
 							set = 0;
@@ -364,7 +364,7 @@ public class bosco
 		}
 	
 	
-		fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 	
 	
 		/* draw the sprites */
@@ -438,7 +438,7 @@ public class bosco
 		{
 			int bpen;
 	
-			bpen = Machine.pens[0];
+			bpen = Machine.pens.read(0);
 			for (offs = 0;offs < total_stars;offs++)
 			{
 				int x,y;

@@ -175,7 +175,7 @@ public class galaga {
                         if (color != 0 && total_stars < MAX_STARS) {
                             stars[total_stars].x = x;
                             stars[total_stars].y = y;
-                            stars[total_stars].col = Machine.pens[color + STARS_COLOR_BASE];
+                            stars[total_stars].col = Machine.pens.read(color + STARS_COLOR_BASE);
                             stars[total_stars].set = set;
                             if (++set > 3) {
                                 set = 0;
@@ -249,7 +249,7 @@ public class galaga {
                 }
             }
 
-            fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+            fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
 
             /* Draw the sprites. */
             for (offs = 0; offs < spriteram_size[0]; offs += 2) {
@@ -321,7 +321,7 @@ public class galaga {
             if ((galaga_starcontrol.read(5) & 1) != 0) {
                 int bpen;
 
-                bpen = Machine.pens[0];
+                bpen = Machine.pens.read(0);
                 for (offs = 0; offs < total_stars; offs++) {
                     int x, y;
                     int set;

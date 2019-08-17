@@ -496,7 +496,7 @@ public class exidy440
 							{
 								/* combine with the background */
 								pen = left | old.read(0);
-								plot_pixel.handler(bitmap, currx, yoffs, Machine.pens[pen]);
+								plot_pixel.handler(bitmap, currx, yoffs, Machine.pens.read(pen));
 	
 								/* check the collisions bit */
 								if (((palette.read(2 * pen) & 0x80)!=0) && count++ < 128)
@@ -509,7 +509,7 @@ public class exidy440
 							{
 								/* combine with the background */
 								pen = right | old.read(1);
-								plot_pixel.handler(bitmap, currx, yoffs, Machine.pens[pen]);
+								plot_pixel.handler(bitmap, currx, yoffs, Machine.pens.read(pen));
 	
 								/* check the collisions bit */
 								if ((palette.read(2 * pen) & 0x80)!=0 && count++ < 128)
@@ -549,7 +549,7 @@ public class exidy440
 			/* only redraw if dirty */
 			if (scanline_dirty.read(sy) != 0)
 			{
-				draw_scanline8(bitmap, 0, y, 320, new UBytePtr(local_videoram, sy * 512), new IntArray(Machine.pens), -1);
+				draw_scanline8(bitmap, 0, y, 320, new UBytePtr(local_videoram, sy * 512), Machine.pens, -1);
 				scanline_dirty.write(sy, 0);
 			}
 		}

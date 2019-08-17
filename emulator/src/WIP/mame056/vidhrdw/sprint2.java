@@ -138,10 +138,10 @@ public class sprint2
 	    org_x=30*8-sprint2_horiz_ram.read(WHITE_CAR);
 	    org_y=31*8-sprint2_vert_car_ram.read(WHITE_CAR*2);
 	
-	    fillbitmap(back_vid,Machine.pens[1],clip);
-	    fillbitmap(grey_cars_vid,Machine.pens[1],clip);
-	    fillbitmap(white_car_vid,Machine.pens[1],clip);
-	    fillbitmap(black_car_vid,Machine.pens[1],clip);
+	    fillbitmap(back_vid,Machine.pens.read(1),clip);
+	    fillbitmap(grey_cars_vid,Machine.pens.read(1),clip);
+	    fillbitmap(white_car_vid,Machine.pens.read(1),clip);
+	    fillbitmap(black_car_vid,Machine.pens.read(1),clip);
 	
 	    /* Draw the background - a car can overlap up to 6 background squares. */
 	    /* This could be optimized by not drawing all 6 every time. */
@@ -237,26 +237,26 @@ public class sprint2
 	    {
 	        for (sx=0;sx<16;sx++)
 	        {
-	                if (read_pixel.handler(white_car_vid, sx, sy)==Machine.pens[3])
+	                if (read_pixel.handler(white_car_vid, sx, sy)==Machine.pens.read(3))
 	                {
 						int back_pixel;
 	
 	                    /* Condition 1 - white car = black car */
-	                    if (read_pixel.handler(black_car_vid, sx, sy)==Machine.pens[0])
+	                    if (read_pixel.handler(black_car_vid, sx, sy)==Machine.pens.read(0))
 	                        sprint2_collision1_data|=0x40;
 	
 	                    /* Condition 2 - white car = grey cars */
-	                    if (read_pixel.handler(grey_cars_vid, sx, sy)==Machine.pens[2])
+	                    if (read_pixel.handler(grey_cars_vid, sx, sy)==Machine.pens.read(2))
 	                        sprint2_collision1_data|=0x40;
 	
 	                    back_pixel = read_pixel.handler(back_vid, sx, sy);
 	
 	                    /* Condition 3 - white car = black playfield (oil) */
-	                    if (back_pixel==Machine.pens[0])
+	                    if (back_pixel==Machine.pens.read(0))
 	                        sprint2_collision1_data|=0x40;
 	
 	                    /* Condition 4 - white car = white playfield (track) */
-	                    if (back_pixel==Machine.pens[3])
+	                    if (back_pixel==Machine.pens.read(3))
 	                        sprint2_collision1_data|=0x80;
 	               }
 	        }
@@ -281,10 +281,10 @@ public class sprint2
 	    org_x=30*8-sprint2_horiz_ram.read(BLACK_CAR);
 	    org_y=31*8-sprint2_vert_car_ram.read(BLACK_CAR*2);
 	
-	    fillbitmap(back_vid,Machine.pens[1],clip);
-	    fillbitmap(grey_cars_vid,Machine.pens[1],clip);
-	    fillbitmap(white_car_vid,Machine.pens[1],clip);
-	    fillbitmap(black_car_vid,Machine.pens[1],clip);
+	    fillbitmap(back_vid,Machine.pens.read(1),clip);
+	    fillbitmap(grey_cars_vid,Machine.pens.read(1),clip);
+	    fillbitmap(white_car_vid,Machine.pens.read(1),clip);
+	    fillbitmap(black_car_vid,Machine.pens.read(1),clip);
 	
 	    /* Draw the background - a car can overlap up to 6 background squares. */
 	    /* This could be optimized by not drawing all 6 every time. */
@@ -382,26 +382,26 @@ public class sprint2
 	    {
 	        for (sx=0;sx<16;sx++)
 	        {
-	                if (read_pixel.handler(black_car_vid, sx, sy)==Machine.pens[0])
+	                if (read_pixel.handler(black_car_vid, sx, sy)==Machine.pens.read(0))
 	                {
 						int back_pixel;
 	
 	                    /* Condition 1 - black car = white car */
-	                    if (read_pixel.handler(white_car_vid, sx, sy)==Machine.pens[3])
+	                    if (read_pixel.handler(white_car_vid, sx, sy)==Machine.pens.read(3))
 	                        sprint2_collision2_data|=0x40;
 	
 	                    /* Condition 2 - black car = grey cars */
-	                    if (read_pixel.handler(grey_cars_vid, sx, sy)==Machine.pens[2])
+	                    if (read_pixel.handler(grey_cars_vid, sx, sy)==Machine.pens.read(2))
 	                        sprint2_collision2_data|=0x40;
 	
 	                    back_pixel = read_pixel.handler(back_vid, sx, sy);
 	
 	                    /* Condition 3 - black car = black playfield (oil) */
-	                    if (back_pixel==Machine.pens[0])
+	                    if (back_pixel==Machine.pens.read(0))
 	                        sprint2_collision2_data|=0x40;
 	
 	                    /* Condition 4 - black car = white playfield (track) */
-	                    if (back_pixel==Machine.pens[3])
+	                    if (back_pixel==Machine.pens.read(3))
 	                        sprint2_collision2_data|=0x80;
 	               }
 	        }

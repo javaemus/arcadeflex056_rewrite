@@ -176,7 +176,7 @@ public class sidearms
 	
 		copyscrollbitmap(bitmap,tmpbitmap2,1,new int[]{scrollx},1,new int[]{scrolly},Machine.visible_area,TRANSPARENCY_NONE,0);
 		}
-		else fillbitmap(bitmap,Machine.pens[0],Machine.visible_area);
+		else fillbitmap(bitmap,Machine.pens.read(0),Machine.visible_area);
 	
 		/* Draw the sprites. */
 		if (objon!=0)

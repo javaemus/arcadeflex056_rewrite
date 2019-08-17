@@ -262,7 +262,7 @@ public class yard
 			col = (data >> i) & 0x11;
 			col = ((col >> 3) | col) & 3;
 	
-			plot_pixel.handler(scroll_panel_bitmap, sx + i, sy, Machine.pens[RADAR_PALETTE_BASE + (sy & 0xfc) + col]);
+			plot_pixel.handler(scroll_panel_bitmap, sx + i, sy, Machine.pens.read(RADAR_PALETTE_BASE + (sy & 0xfc) + col));
 		}
 	} };
 	

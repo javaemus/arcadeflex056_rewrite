@@ -200,7 +200,7 @@ public class tnzs
 	
 	
 		/* Blank the background */
-		fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+		fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
 	
 		/* Redraw the background tiles (c400-c5ff) */
 		tnzs_vh_draw_background(bitmap, new UBytePtr(tnzs_objram, 0x400));

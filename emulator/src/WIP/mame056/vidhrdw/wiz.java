@@ -296,7 +296,7 @@ public class wiz
 		int bank;
 		rectangle visible_area;
 	
-		fillbitmap(bitmap,Machine.pens[bgpen],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(bgpen),Machine.visible_area);
 		draw_background(bitmap, 2 + ((char_bank[0] << 1) | char_bank[1]), 0);
 		draw_foreground(bitmap, 0);
 	
@@ -311,7 +311,7 @@ public class wiz
 	
 	public static VhUpdatePtr stinger_vh_screenrefresh = new VhUpdatePtr() { public void handler(mame_bitmap bitmap,int full_refresh) 
 	{
-		fillbitmap(bitmap,Machine.pens[bgpen],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(bgpen),Machine.visible_area);
 		draw_background(bitmap, 2 + char_bank[0], 1);
 		draw_foreground(bitmap, 1);
 		draw_sprites(bitmap, spriteram_2, 4, Machine.visible_area);

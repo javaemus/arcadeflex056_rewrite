@@ -58,7 +58,7 @@ public class mexico86
 		/* the background character columns is stored inthe area dd00-dd3f */
 	
 		/* This clears & redraws the entire screen each pass */
-		fillbitmap(bitmap,Machine.pens[255],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(255),Machine.visible_area);
 	
 		sx = 0;
 	/* the score display seems to be outside of the main objectram. */
@@ -137,7 +137,7 @@ public class mexico86
 		/* the background character columns is stored inthe area dd00-dd3f */
 	
 		/* This clears & redraws the entire screen each pass */
-		fillbitmap(bitmap,Machine.pens[255],Machine.visible_area);
+		fillbitmap(bitmap,Machine.pens.read(255),Machine.visible_area);
 	
 		sx = 0;
 	/* the score display seems to be outside of the main objectram. */

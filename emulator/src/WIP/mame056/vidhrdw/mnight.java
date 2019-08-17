@@ -112,7 +112,7 @@ public class mnight
 			if (bg_enable != 0)
 				memset(bg_dirtybuffer, 1, mnight_backgroundram_size[0] / 2);
 			else
-				fillbitmap(bitmap_bg, Machine.pens[0],null);
+				fillbitmap(bitmap_bg, Machine.pens.read(0),null);
 		}
 	} };
 	

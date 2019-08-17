@@ -346,7 +346,7 @@ public class jedi
 		/* if no video, clear it all to black */
 		if (video_off != 0)
 		{
-			fillbitmap(bitmap, Machine.pens[1024], Machine.visible_area);
+			fillbitmap(bitmap, Machine.pens.read(1024), Machine.visible_area);
 			return;
 		}
 	

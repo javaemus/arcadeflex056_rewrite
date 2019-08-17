@@ -103,12 +103,12 @@ public class cloak
 		{
 			if (bmap != 0)
 			{
-				fillbitmap(tmpbitmap, Machine.pens[16], Machine.visible_area);
+				fillbitmap(tmpbitmap, Machine.pens.read(16), Machine.visible_area);
 				memset(tmpvideoram, 0, 256*256);
 			}
 			else
 			{
-				fillbitmap(tmpbitmap2, Machine.pens[16], Machine.visible_area);
+				fillbitmap(tmpbitmap2, Machine.pens.read(16), Machine.visible_area);
 				memset(tmpvideoram2, 0, 256*256);
 			}
 		}
@@ -161,12 +161,12 @@ public class cloak
 	
 			if (bmap != 0)
 			{
-				plot_pixel.handler(tmpbitmap, (x-6)&0xff, y, Machine.pens[16 + col]);
+				plot_pixel.handler(tmpbitmap, (x-6)&0xff, y, Machine.pens.read(16 + col));
 				tmpvideoram.write(y*256+x, col);
 			}
 			else
 			{
-				plot_pixel.handler(tmpbitmap2, (x-6)&0xff, y, Machine.pens[16 + col]);
+				plot_pixel.handler(tmpbitmap2, (x-6)&0xff, y, Machine.pens.read(16 + col));
 				tmpvideoram2.write(y*256+x, col);
 			}
 	
@@ -251,8 +251,8 @@ public class cloak
 		{
 			for (lx = 0; lx < 256; lx++)
 			{
-				plot_pixel.handler(tmpbitmap,  (lx-6)&0xff, ly, Machine.pens[16 + tmpvideoram.read(ly*256+lx)]);
-				plot_pixel.handler(tmpbitmap2, (lx-6)&0xff, ly, Machine.pens[16 + tmpvideoram2.read(ly*256+lx)]);
+				plot_pixel.handler(tmpbitmap,  (lx-6)&0xff, ly, Machine.pens.read(16 + tmpvideoram.read(ly*256+lx)));
+				plot_pixel.handler(tmpbitmap2, (lx-6)&0xff, ly, Machine.pens.read(16 + tmpvideoram2.read(ly*256+lx)));
 			}
 		}
 	}

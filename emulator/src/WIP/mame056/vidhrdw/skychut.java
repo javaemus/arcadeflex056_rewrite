@@ -150,8 +150,8 @@ public class skychut
 	
 				iremm15_drawgfx(bitmap,
                                                 videoram.read(offs),
-                                                Machine.pens[colorram.read(offs)],
-                                                Machine.pens[7], // space beam not color 0
+                                                Machine.pens.read(colorram.read(offs)),
+                                                Machine.pens.read(7), // space beam not color 0
                                                 8*sx,8*sy);
 			}
 		}

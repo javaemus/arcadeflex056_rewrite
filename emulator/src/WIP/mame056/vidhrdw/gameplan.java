@@ -248,7 +248,7 @@ public class gameplan
 						xpos++;
 				}
 	
-				plot_pixel2(Machine.scrbitmap, tmpbitmap, xpos, ypos, Machine.pens[colour]);
+				plot_pixel2(Machine.scrbitmap, tmpbitmap, xpos, ypos, Machine.pens.read(colour));
 			}
 			else if (r0 == 1)
 			{
@@ -361,8 +361,8 @@ public class gameplan
 		logerror("  clearing the screen to colour %d (%s)\n", clear_to_colour, colour_names[clear_to_colour]);
 	//#endif
 	
-		fillbitmap(tmpbitmap, Machine.pens[clear_to_colour], null);
-		fillbitmap(Machine.scrbitmap, Machine.pens[clear_to_colour], null);
+		fillbitmap(tmpbitmap, Machine.pens.read(clear_to_colour), null);
+		fillbitmap(Machine.scrbitmap, Machine.pens.read(clear_to_colour), null);
 	
 		fix_clear_to_colour = -1;
 	}

@@ -389,14 +389,14 @@ public class tunhunt
 					span_data = source.read(span);
 					if( span_data == 0xff ) break;
 					pen = ((span_data>>6)&0x3)^0x3;
-					color = Machine.pens[pen];
+					color = Machine.pens.read(pen);
 					count = (span_data&0x1f)+1;
 					while( count-- != 0)
 					{
 						plot_pixel.handler( tmpbitmap, x++,line,color );
 					}
 				}
-				color = Machine.pens[0];
+				color = Machine.pens.read(0);
 				while( x<256 )
 				{
 					plot_pixel.handler(tmpbitmap, x++,line,color );
@@ -429,7 +429,7 @@ public class tunhunt
 			scaley,/* incyy */
 			0, /* no wraparound */
 			clip,
-			TRANSPARENCY_PEN,Machine.pens[0],
+			TRANSPARENCY_PEN,Machine.pens.read(0),
 			0 /* priority */
 		);
 	}
@@ -481,7 +481,7 @@ public class tunhunt
 						z = x0; /* give priority to rightmost spans */
 					}
 				}
-				color = Machine.pens[pen];
+				color = Machine.pens.read(pen);
 				plot_pixel.handler(bitmap, x, 0xff-y, color );
 			}
 		}

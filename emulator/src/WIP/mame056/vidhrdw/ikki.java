@@ -162,7 +162,7 @@ public class ikki
 	
 	/* draw sprites */
 	
-		fillbitmap(tmpbitmap, Machine.pens[256], null);
+		fillbitmap(tmpbitmap, Machine.pens.read(256), null);
 	
 		/* c060 - c0ff */
 		for (offs=0x00; offs<0x800; offs +=4)

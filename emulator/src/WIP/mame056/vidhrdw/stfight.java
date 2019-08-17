@@ -338,7 +338,7 @@ public class stfight
 	{
 		fillbitmap(priority_bitmap,0,null);
 	
-		fillbitmap(bitmap,Machine.pens[0],new rectangle(Machine.visible_area));	/* in case bg_tilemap is disabled */
+		fillbitmap(bitmap,Machine.pens.read(0),new rectangle(Machine.visible_area));	/* in case bg_tilemap is disabled */
                 /*TODO*///tilemap_draw(bitmap,bg_tilemap,0,0);
                 tilemap_draw(bitmap,bg_tilemap,0);
 		/*TODO*///tilemap_draw(bitmap,fg_tilemap,0,1);

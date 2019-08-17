@@ -458,12 +458,12 @@ public class mjsikaku
 				if (tflag1 != 0)
 				{
 					mjsikaku_videoram.write((dy * Machine.drv.screen_width) + dx1, drawcolor1);
-					plot_pixel.handler(mjsikaku_tmpbitmap, dx1, dy, Machine.pens[drawcolor1]);
+					plot_pixel.handler(mjsikaku_tmpbitmap, dx1, dy, Machine.pens.read(drawcolor1));
 				}
 				if (tflag2 != 0)
 				{
 					mjsikaku_videoram.write((dy * Machine.drv.screen_width) + dx2, drawcolor2);
-					plot_pixel.handler(mjsikaku_tmpbitmap, dx2, dy, Machine.pens[drawcolor2]);
+					plot_pixel.handler(mjsikaku_tmpbitmap, dx2, dy, Machine.pens.read(drawcolor2));
 				}
 	
 				nb1413m3_busyctr++;
@@ -636,12 +636,12 @@ public class mjsikaku
 				if (tflag1 != 0)
 				{
 					mjsikaku_videoram.write((dy * Machine.drv.screen_width) + dx1, drawcolor1);
-					plot_pixel.handler(mjsikaku_tmpbitmap, dx1, dy, Machine.pens[drawcolor1]);
+					plot_pixel.handler(mjsikaku_tmpbitmap, dx1, dy, Machine.pens.read(drawcolor1));
 				}
 				if (tflag2 != 0)
 				{
 					mjsikaku_videoram.write((dy * Machine.drv.screen_width) + dx2, drawcolor2);
-					plot_pixel.handler(mjsikaku_tmpbitmap, dx2, dy, Machine.pens[drawcolor2]);
+					plot_pixel.handler(mjsikaku_tmpbitmap, dx2, dy, Machine.pens.read(drawcolor2));
 				}
 	
 				nb1413m3_busyctr++;
@@ -796,12 +796,12 @@ public class mjsikaku
 				if (tflag1 != 0)
 				{
 					mjsikaku_videoram.write((dy * Machine.drv.screen_width) + dx1, drawcolor1);
-					plot_pixel.handler(mjsikaku_tmpbitmap, dx1, dy, Machine.pens[drawcolor1]);
+					plot_pixel.handler(mjsikaku_tmpbitmap, dx1, dy, Machine.pens.read(drawcolor1));
 				}
 				if (tflag2 != 0)
 				{
 					mjsikaku_videoram.write((dy * Machine.drv.screen_width) + dx2, drawcolor2);
-					plot_pixel.handler(mjsikaku_tmpbitmap, dx2, dy, Machine.pens[drawcolor2]);
+					plot_pixel.handler(mjsikaku_tmpbitmap, dx2, dy, Machine.pens.read(drawcolor2));
 				}
 	
 				nb1413m3_busyctr++;
@@ -999,12 +999,12 @@ public class mjsikaku
 				if (tflag1 != 0)
 				{
 					mjsikaku_videoram.write((dy * Machine.drv.screen_width) + dx1, drawcolor1);
-					plot_pixel.handler(mjsikaku_tmpbitmap, dx1, dy, Machine.pens[drawcolor1]);
+					plot_pixel.handler(mjsikaku_tmpbitmap, dx1, dy, Machine.pens.read(drawcolor1));
 				}
 				if (tflag2 != 0)
 				{
 					mjsikaku_videoram.write((dy * Machine.drv.screen_width) + dx2, drawcolor2);
-					plot_pixel.handler(mjsikaku_tmpbitmap, dx2, dy, Machine.pens[drawcolor2]);
+					plot_pixel.handler(mjsikaku_tmpbitmap, dx2, dy, Machine.pens.read(drawcolor2));
 				}
 	
 				nb1413m3_busyctr++;
@@ -1128,12 +1128,12 @@ public class mjsikaku
 				if (tflag1 != 0)
 				{
 					mjsikaku_videoram.write((dy * Machine.drv.screen_width) + dx1, drawcolor1);
-					plot_pixel.handler(mjsikaku_tmpbitmap, dx1, dy, Machine.pens[drawcolor1]);
+					plot_pixel.handler(mjsikaku_tmpbitmap, dx1, dy, Machine.pens.read(drawcolor1));
 				}
 				if (tflag2 != 0)
 				{
 					mjsikaku_videoram.write((dy * Machine.drv.screen_width) + dx2, drawcolor2);
-					plot_pixel.handler(mjsikaku_tmpbitmap, dx2, dy, Machine.pens[drawcolor2]);
+					plot_pixel.handler(mjsikaku_tmpbitmap, dx2, dy, Machine.pens.read(drawcolor2));
 				}
 	
 				nb1413m3_busyctr++;
@@ -1236,7 +1236,7 @@ public class mjsikaku
 				for (x = 0; x < Machine.drv.screen_width; x++)
 				{
 					color = mjsikaku_videoram.read((y * Machine.drv.screen_width) + x);
-					plot_pixel.handler(mjsikaku_tmpbitmap, x, y, Machine.pens[color]);
+					plot_pixel.handler(mjsikaku_tmpbitmap, x, y, Machine.pens.read(color));
 				}
 			}
 		}
@@ -1247,7 +1247,7 @@ public class mjsikaku
 		}
 		else
 		{
-			fillbitmap(bitmap, Machine.pens[0x0000], null);
+			fillbitmap(bitmap, Machine.pens.read(0x0000), null);
 		}
 	} };
 }

@@ -298,7 +298,7 @@ public class pastelgl
 				if (tflag != 0)
 				{
 					pastelgl_videoram.write((dy * Machine.drv.screen_width) + dx, drawcolor);
-					plot_pixel.handler(pastelgl_tmpbitmap, dx, dy, Machine.pens[drawcolor]);
+					plot_pixel.handler(pastelgl_tmpbitmap, dx, dy, Machine.pens.read(drawcolor));
 				}
 	
 				nb1413m3_busyctr++;
@@ -347,7 +347,7 @@ public class pastelgl
 				for (x = 0; x < Machine.drv.screen_width; x++)
 				{
 					color = pastelgl_videoram.read((y * Machine.drv.screen_width) + x);
-					plot_pixel.handler(pastelgl_tmpbitmap, x, y, Machine.pens[color]);
+					plot_pixel.handler(pastelgl_tmpbitmap, x, y, Machine.pens.read(color));
 				}
 			}
 		}
@@ -358,7 +358,7 @@ public class pastelgl
 		}
 		else
 		{
-			fillbitmap(bitmap, Machine.pens[0x00], null);
+			fillbitmap(bitmap, Machine.pens.read(0x00), null);
 		}
 	} };
 }

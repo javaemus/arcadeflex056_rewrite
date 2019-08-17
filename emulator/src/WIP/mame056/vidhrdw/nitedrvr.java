@@ -55,7 +55,7 @@ public class nitedrvr
 			for (x=bx; x<ex; x++)
 			{
 				if ((y<256) && (x<256))
-					plot_pixel.handler(bitmap, x, y, Machine.pens[1]);
+					plot_pixel.handler(bitmap, x, y, Machine.pens.read(1));
 			}
 		}
 	

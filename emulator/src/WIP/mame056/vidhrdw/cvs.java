@@ -547,9 +547,9 @@ public class cvs
 			y = 255 - y;
 		}
 	
-		if (read_pixel.handler(bitmap, x, y) == Machine.pens[0])
+		if (read_pixel.handler(bitmap, x, y) == Machine.pens.read(0))
 		{
-			plot_pixel.handler(bitmap, x, y, Machine.pens[7]);
+			plot_pixel.handler(bitmap, x, y, Machine.pens.read(7));
 		}
 	}
 	

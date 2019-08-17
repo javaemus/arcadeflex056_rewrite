@@ -923,7 +923,7 @@ public class itech8
 		/* if we're blanked, just fill with black */
 		if (tms_state.blanked != 0)
 		{
-			fillbitmap(bitmap, Machine.pens[0], Machine.visible_area);
+			fillbitmap(bitmap, Machine.pens.read(0), Machine.visible_area);
 			return;
 		}
 	
@@ -955,7 +955,7 @@ public class itech8
                                     scanline[x * 2 + 0] = (char) ((latch.read(256 * ty + x) & 0xf0) | (base.read(256 * ty + x) >> 4));
                                     scanline[x * 2 + 1] = (char) ((latch.read(256 * ty + x) << 4) | (base.read(256 * ty + x) & 0x0f));
                             }
-                            draw_scanline8(bitmap, Machine.visible_area.min_x, y, Machine.visible_area.max_x - Machine.visible_area.min_x + 1, new UBytePtr(scanline, Machine.visible_area.min_x), new IntArray(Machine.pens), -1);
+                            draw_scanline8(bitmap, Machine.visible_area.min_x, y, Machine.visible_area.max_x - Machine.visible_area.min_x + 1, new UBytePtr(scanline, Machine.visible_area.min_x), Machine.pens, -1);
                     }
 		}
 	
@@ -971,8 +971,8 @@ public class itech8
 			/* now regenerate the bitmap */
 			for (ty = 0, y = Machine.visible_area.min_y; y <= Machine.visible_area.max_y; y++, ty++)
 			{
-				draw_scanline8(bitmap, Machine.visible_area.min_x, y, 256, new UBytePtr(base, 0x20000 + 256 * ty), new IntArray(Machine.pens), -1);
-				draw_scanline8(bitmap, Machine.visible_area.min_x, y, 256, new UBytePtr(base, 0x00000 + 256 * ty), new IntArray(Machine.pens), 0);
+				draw_scanline8(bitmap, Machine.visible_area.min_x, y, 256, new UBytePtr(base, 0x20000 + 256 * ty), Machine.pens, -1);
+				draw_scanline8(bitmap, Machine.visible_area.min_x, y, 256, new UBytePtr(base, 0x00000 + 256 * ty), Machine.pens, 0);
 			}
 		}
 	

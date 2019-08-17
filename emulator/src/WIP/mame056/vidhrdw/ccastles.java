@@ -213,8 +213,8 @@ public class ccastles
 			y = j/256;
 			if (flip_screen() == 0)
 			{
-				plot_pixel.handler(tmpbitmap, x  , y, Machine.pens[16 + ((videoram.read(addr)& 0xf0) >> 4)]);
-				plot_pixel.handler(tmpbitmap, x+1, y, Machine.pens[16 +  (videoram.read(addr)& 0x0f)      ]);
+				plot_pixel.handler(tmpbitmap, x  , y, Machine.pens.read(16 + ((videoram.read(addr)& 0xf0) >> 4)));
+				plot_pixel.handler(tmpbitmap, x+1, y, Machine.pens.read(16 +  (videoram.read(addr)& 0x0f)      ));
 	
 				/* if bit 3 of the pixel is set, background has priority over sprites when */
 				/* the sprite has the priority bit set. We use a second bitmap to remember */
@@ -228,8 +228,8 @@ public class ccastles
 				x = 254-x;
 				if (y >= 0)
 				{
-					plot_pixel.handler(tmpbitmap, x+1, y, Machine.pens[16 + ((videoram.read(addr)& 0xf0) >> 4)]);
-					plot_pixel.handler(tmpbitmap, x  , y, Machine.pens[16 +  (videoram.read(addr)& 0x0f)      ]);
+					plot_pixel.handler(tmpbitmap, x+1, y, Machine.pens.read(16 + ((videoram.read(addr)& 0xf0) >> 4)));
+					plot_pixel.handler(tmpbitmap, x  , y, Machine.pens.read(16 +  (videoram.read(addr)& 0x0f)      ));
 	
 					/* if bit 3 of the pixel is set, background has priority over sprites when */
 					/* the sprite has the priority bit set. We use a second bitmap to remember */
@@ -372,13 +372,13 @@ public class ccastles
 	
 							/* if background has priority over sprite, make the */
 							/* temporary bitmap transparent */
-							if (pixb != 0 && (pixa != Machine.pens[0]))
-								plot_pixel.handler(sprite_bm, i, j, Machine.pens[7]);
+							if (pixb != 0 && (pixa != Machine.pens.read(0)))
+								plot_pixel.handler(sprite_bm, i, j, Machine.pens.read(7));
 						}
 					}
 				}
 	
-				copybitmap(bitmap,sprite_bm,0,0,x,y,Machine.visible_area,TRANSPARENCY_PEN,Machine.pens[7]);
+				copybitmap(bitmap,sprite_bm,0,0,x,y,Machine.visible_area,TRANSPARENCY_PEN,Machine.pens.read(7));
 			}
 			else
 			{

@@ -11,6 +11,7 @@ import static WIP.mame056.machine.rp5h01.*;
 import static WIP.mame056.machine.rp5h01H.*;
 import static WIP2.common.ptr.*;
 import static WIP2.common.libc.cstring.*;
+import WIP2.common.subArrays.IntArray;
 import static WIP2.mame056.commonH.*;
 import static WIP2.mame056.common.*;
 import static WIP2.mame056.inptport.*;
@@ -234,7 +235,7 @@ public class playch10
 			int x = readinputport( 5 );
 			int y = readinputport( 6 );
 			int pix, color_base;
-			int[] pens = Machine.pens;
+			IntArray pens = Machine.pens;
 	
 			/* no sprite hit (yet) */
 			ret |= 0x08;
@@ -246,8 +247,8 @@ public class playch10
 			color_base = ppu2c03b_get_colorbase( 0 );
 	
 			/* look at the screen and see if the cursor is over a bright pixel */
-			if ( ( pix == pens[color_base+0x20] ) || ( pix == pens[color_base+0x30] ) ||
-				 ( pix == pens[color_base+0x33] ) || ( pix == pens[color_base+0x34] ) )
+			if ( ( pix == pens.read(color_base+0x20) ) || ( pix == pens.read(color_base+0x30) ) ||
+				 ( pix == pens.read(color_base+0x33) ) || ( pix == pens.read(color_base+0x34) ) )
 			{
 				ret &= ~0x08; /* sprite hit */
 			}

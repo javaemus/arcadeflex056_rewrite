@@ -262,7 +262,7 @@ public class superqix
 		copybitmap(bitmap,tmpbitmap,0,0,0,0,Machine.visible_area,TRANSPARENCY_NONE,0);
 	
 		for(i=1;i<16;i++)
-			pens[i]=Machine.pens[i];
+			pens[i]=Machine.pens.read(i);
 		pens[0]=0;
 	
 		if(sqix_current_bitmap==0)		/* Bitmap 1 */

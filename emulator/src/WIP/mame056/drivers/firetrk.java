@@ -399,7 +399,7 @@ public class firetrk
 	static void draw_sprites( mame_bitmap bitmap )
 	{
 		int color		= firetruck_invert_display!=0?3:7; /* invert display */
-		int track_color = Machine.pens[firetruck_invert_display!=0?0:3];
+		int track_color = Machine.pens.read(firetruck_invert_display!=0?0:3);
 		int bgcolor		= firetruck_invert_display!=0?4:0;
 		int cabrot		= videoram.read(0x1080);
 		int hpos		= videoram.read(0x1460);

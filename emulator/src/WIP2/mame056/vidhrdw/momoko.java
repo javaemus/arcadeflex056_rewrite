@@ -127,7 +127,7 @@ public class momoko {
                     }
 
                     if (dot >= pri) {
-                        plot_pixel.handler(bitmap, px, py, Machine.pens[col * 16 + dot + 256]);
+                        plot_pixel.handler(bitmap, px, py, Machine.pens.read(col * 16 + dot + 256));
                     }
                     d0 = (d0 << 1) & 0xFF;
                     d1 = (d1 << 1) & 0xFF;
@@ -181,7 +181,7 @@ public class momoko {
                     }
                 }
             } else {
-                fillbitmap(bitmap, Machine.pens[256], null);
+                fillbitmap(bitmap, Machine.pens.read(256), null);
             }
 
             /* draw sprites (momoko) */

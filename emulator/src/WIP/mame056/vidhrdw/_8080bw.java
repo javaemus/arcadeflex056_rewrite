@@ -362,7 +362,7 @@ public class _8080bw
 			y = 255-y;
 		}
 	
-		plot_pixel.handler(Machine.scrbitmap,x,y,Machine.pens[col]);
+		plot_pixel.handler(Machine.scrbitmap,x,y,Machine.pens.read(col));
             }
         };
 	
@@ -374,7 +374,7 @@ public class _8080bw
 			y = 255-y;
 		}
 	
-		plot_pixel.handler(tmpbitmap,x,y,Machine.pens[col]);
+		plot_pixel.handler(tmpbitmap,x,y,Machine.pens.read(col));
             }
         };
         
