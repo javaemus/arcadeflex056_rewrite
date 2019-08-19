@@ -2,7 +2,12 @@
  * ported to v0.56
  * ported to v0.37b7
  */
-package WIP2.mame056.drivers;
+/**
+ * Changelog
+ * ---------
+ * 19/08/2019 - rewrote minivadr driver (shadow)
+ */
+package mame056.drivers;
 
 import static WIP2.arcadeflex056.fucPtr.*;
 
@@ -15,7 +20,7 @@ import static WIP2.mame056.driverH.*;
 import static WIP2.mame056.memoryH.*;
 import static WIP2.mame056.inptport.*;
 import static WIP2.mame056.drawgfxH.*;
-import static WIP2.mame056.vidhrdw.minivadr.*;
+import static mame056.vidhrdw.minivadr.*;
 import static WIP2.mame056.vidhrdw.generic.*;
 
 public class minivadr {

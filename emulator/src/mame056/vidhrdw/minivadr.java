@@ -3,7 +3,12 @@
  * ported to v0.37b7
  * ported to v0.36
  */
-package WIP2.mame056.vidhrdw;
+/**
+ * Changelog
+ * ---------
+ * 19/08/2019 - rewrote minivadr vidhrdw (shadow)
+ */
+package mame056.vidhrdw;
 
 import static WIP2.arcadeflex056.fucPtr.*;
 

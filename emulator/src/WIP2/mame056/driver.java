@@ -5,7 +5,7 @@ package WIP2.mame056;
 
 import static WIP2.mame056.driverH.*;
 
-import static WIP2.mame056.drivers.minivadr.*;
+import static mame056.drivers.minivadr.*;
 import static WIP2.mame056.drivers.bankp.*;
 import static WIP2.mame056.drivers.pingpong.*;
 import static WIP2.mame056.drivers.pengo.*;
